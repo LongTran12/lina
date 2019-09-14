@@ -1,0 +1,33 @@
+$primary_color: #10297a;
+
+// header
+body {
+  font-family: "Poppins", sans-serif;
+
+  .ant-select-dropdown-menu-item:first-child {
+    border-bottom: 1px solid rgba(18, 32, 88, 0.1);
+  }
+  .ant-select-dropdown-menu-item {
+    display: flex;
+    padding: 20px 45px;
+    font-size: 14px;
+    color: #262626;
+    align-items: center;
+    flex-flow: row wrap;
+  }
+  .slick-track {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    .slick-slide {
+      height: auto;
+      display: flex;
+    }
+  }
+}
+.ant-modal-footer {
+  display: none;
+}
+.ant-modal-body {
+  padding: 0;
+}
