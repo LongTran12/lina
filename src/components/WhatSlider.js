@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import lina1 from "../assets/images/icon_lina1.png";
 import lina2 from "../assets/images/icon_lina2.png";
 import lina3 from "../assets/images/logo-lina-icon.png";
@@ -6,84 +6,112 @@ import lina4 from "../assets/images/icon_lina4.png";
 import lina5 from "../assets/images/icon_lina5.png";
 import styled from 'styled-components';
 import 'antd/dist/antd.css';
-
 import Slider from "react-slick";
+import { SiteContext } from "../contexts/siteContext";
 
-export default function WhatSlider() {
+export function WhatSlider() {
+    const { getLang } = useContext(SiteContext);
+    const data = [
+        {
+            id: 1,
+            image: lina1,
+            title: getLang('review'),
+            details: getLang('The platform based on blockchain technology, data will be guaranteed immutability and transparency.'),
+            backgr: "bg_oranger",
+        },
+        {
+            id: 2,
+            image: lina2,
+            title: "Supply Chain",
+            details: "Apply traditional supply chain on blockchain. As a result, companies that partner with LINA can rebuild their supply chain management more efficiently and reduce expenses.",
+            backgr: "bg_pink",
+        },
+        {
+            id: 3,
+            image: lina3,
+            title: "LINA",
+            details: "An infinite ecosystem on Crypto platforms",
+            backgr: "bg_purple",
+        },
+        {
+            id: 4,
+            image: lina4,
+            title: "Healthcare",
+            details: "Create history data of patient, hospitals where patients were in in the past transparently and accurately.",
+            backgr: "bg_blue",
+        },
+        {
+            id: 5,
+            image: lina5,
+            title: "E-Government",
+            details: "Provide new technology for government management. Cumbersome administrative procedures will be removed, saving time and money.",
+            backgr: "bg_green",
+        }
+    ]
+
     return (
         <WrapSlider>
-            <Slider { ...setting }>
-            {
-                data.map((index,i)=>
-                    <DataSlider key={i} className={"slider-what " + index.backgr} >
-                       <WrapH>
-                            <div className="s-image">
-                            <ImageLu src={index.image} alt={index.title}/>
-                        </div>     
-                        <div className="s-title">
-                            <h3>{index.title}</h3>
-                        </div>  
-                        <div className="s-detail">
-                            <p>{index.details}</p>
-                        </div>    
-                        </WrapH>
-                    </DataSlider>
-                )
-            }
+            <Slider {...setting}>
+                {
+                    data.map((index, i) =>
+                        <DataSlider key={i} className={"slider-what " + index.backgr} >
+                            <WrapH>
+                                <div className="s-image">
+                                    <ImageLu src={index.image} alt={index.title} />
+                                </div>
+                                <div className="s-title">
+                                    <h3>{index.title}</h3>
+                                </div>
+                                <div className="s-detail">
+                                    <p>{index.details}</p>
+                                </div>
+                            </WrapH>
+                        </DataSlider>
+                    )
+                }
 
             </Slider>
-            
+
         </WrapSlider>
     )
-}
 
+}
 const setting = {
-  dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 5,
-      slidesToScroll: 1,
-      
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    responsive: [
+        {
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: true
+            }
+        },
+        {
+            breakpoint: 767,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                initialSlide: 2
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }
+    ]
 }
 
-const data = [
-    {
-        id:1,
-        image:lina1,
-        title:"Review",
-        details:"The platform based on blockchain technology, data will be guaranteed immutability and transparency.",
-        backgr:"bg_oranger",
-    },
-    {
-        id:2,
-        image:lina2,
-        title:"Supply Chain",
-        details:"Apply traditional supply chain on blockchain. As a result, companies that partner with LINA can rebuild their supply chain management more efficiently and reduce expenses.",
-        backgr:"bg_pink",
-    },
-    {
-        id:3,
-        image:lina3,
-        title:"LINA",
-        details:"An infinite ecosystem on Crypto platforms",
-        backgr:"bg_purple",
-    },
-    {
-        id:4,
-        image:lina4,
-        title:"Healthcare",
-        details:"Create history data of patient, hospitals where patients were in in the past transparently and accurately.",
-        backgr:"bg_blue",
-    },
-    {
-        id:5,
-        image:lina5,
-        title:"E-Government",
-        details:"Provide new technology for government management. Cumbersome administrative procedures will be removed, saving time and money.",
-        backgr:"bg_green",
-    }
-]
-const WrapH= styled.div`
+
+const WrapH = styled.div`
    display: flex;
       height: auto;
       align-items: center; 
@@ -96,7 +124,7 @@ const ImageLu = styled.img`
     width:80px;
     margin-bottom:45px;
 `;
-const WrapSlider =styled.div`
+const WrapSlider = styled.div`
     margin-bottom:60px;
     .slick-slide {
         padding:5px 15px;

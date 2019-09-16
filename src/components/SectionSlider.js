@@ -1,9 +1,9 @@
 import React from 'react'
 import backgr from "../assets/images/main-banner-bg.png";
 import styled from "styled-components";
-import { Row,Col } from 'antd';
-import {IoIosSend} from "react-icons/io";
-import {FaFacebookF,FaTwitter,FaRedditAlien,FaMediumM} from "react-icons/fa";
+import { Row, Col } from 'antd';
+import { IoIosSend } from "react-icons/io";
+import { FaFacebookF, FaTwitter, FaRedditAlien, FaMediumM } from "react-icons/fa";
 
 export default function SectionSlider() {
     return (
@@ -11,8 +11,8 @@ export default function SectionSlider() {
             <WrapSlide>
                 <Row type="flex" align="middle" justify="center">
                     <Col span={10}>
-                      <ButtonStyle>
-                          LINA NETWORK
+                        <ButtonStyle>
+                            LINA NETWORK
                       </ButtonStyle>
                         <BlockSlider>
                             <h1>Network Platform</h1>
@@ -33,9 +33,9 @@ export default function SectionSlider() {
                             </WrapCommunity>
                         </BlockSlider>
                     </Col>
-                   <Col span={12}
-                   
-                   ></Col>
+                    <Col span={12}
+
+                    ></Col>
                 </Row>
             </WrapSlide>
         </>
@@ -63,7 +63,7 @@ const ButtonStyle = styled.button`
         background:rgb(255, 174, 59);
     }
 `;
-const WrapCommunity =styled.div`
+const WrapCommunity = styled.div`
       h4{
         font-size: 18px;
         line-height: 20px;
@@ -89,13 +89,13 @@ const ButtonCommunity = styled.button`
        
     }
 `;
- const WrapSlide = styled.div`
+const WrapSlide = styled.div`
         background-image:url(${backgr});
         padding-top:300px;
         padding-bottom:100px;
         color:#fff;
     `;
-    const BlockSlider = styled.div`
+const BlockSlider = styled.div`
         h1{
             font-size:80px;
             line-height:80px;

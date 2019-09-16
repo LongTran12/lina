@@ -1,48 +1,43 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import styled from "styled-components";
-import {Row,Col,Modal} from "antd";
-import {FaYoutube } from "react-icons/fa";
+import { Row, Modal } from "antd";
+import { FaYoutube } from "react-icons/fa";
 
-
-
-export default function BlockIntro({wrapBackgr,textIntro,colorText,discription,right,order,imageLink,youtubeLink}) {
+export default function BlockIntro({ wrapBackgr, textIntro, colorText, discription, right, order, imageLink, youtubeLink }) {
     const [modalOpen, setmodalOpen] = useState(false);
-    const openModal = () =>{
+    const openModal = () => {
         setmodalOpen(!modalOpen);
     }
     return (
         <WrapBlock background={wrapBackgr} right={right} order={order}>
             <Row>
-            <WrapVideo >
-                <div className="modal-video">
-                    <img src={imageLink} alt=""/>
-                    <button className="btn-video" onClick={openModal}>
-                        <FaYoutube/>
-                    </button>
-                    <Modal
-                      
-                      visible={modalOpen}
-                      onOk={openModal}
-                       onCancel={openModal}
-                    >
-                    <VideoIframe>
-                      <iframe width="900px" height="800px" src={youtubeLink} frameborder="0" title="video"></iframe>
-                    </VideoIframe>
-                    </Modal>
-                </div>
-                <div className="text-intro">
-                    <TitleIntro colorText ={colorText}>{textIntro}</TitleIntro>
-                    
-                    <Descrip>{discription}</Descrip>
-                </div>
-            </WrapVideo>
-            
+                <WrapVideo >
+                    <div className="modal-video">
+                        <img src={imageLink} alt="" />
+                        <button className="btn-video" onClick={openModal}>
+                            <FaYoutube />
+                        </button>
+                        <Modal
+                            visible={modalOpen}
+                            onOk={openModal}
+                            onCancel={openModal}
+                        >
+                            <VideoIframe>
+                                <iframe width="900px" height="800px" src={youtubeLink} frameborder="0" title="video"></iframe>
+                            </VideoIframe>
+                        </Modal>
+                    </div>
+                    <div className="text-intro">
+                        <TitleIntro colorText={colorText}>{textIntro}</TitleIntro>
+                        <Descrip>{discription}</Descrip>
+                    </div>
+                </WrapVideo>
             </Row>
-       </WrapBlock>
+        </WrapBlock>
     )
 }
 
-const WrapVideo= styled.div`
+const WrapVideo = styled.div`
     display:flex;
     position:relative;
     align-items:center;
@@ -87,13 +82,13 @@ const Descrip = styled.p`
     font-size: 14px;
     line-height:26px;
 `;
-const TitleIntro  =styled.h3(props=>({
-    "color":props.colorText,
+const TitleIntro = styled.h3(props => ({
+    "color": props.colorText,
     "font-size": "40px",
     "font-weight": "600",
     "position": "relative",
     "padding-bottom": "15px",
-    
+
 }))
 
 const WrapBlock = styled.div`
@@ -101,16 +96,16 @@ const WrapBlock = styled.div`
        padding:40px;
        border-radius:15px;
        .text-intro{
-            order:${props => ( props.order ? props.order : '3' )};
+            order:${props => (props.order ? props.order : '3')};
             h3{
-                 text-align: ${props => (props.right ? "right":"left")};
+                 text-align: ${props => (props.right ? "right" : "left")};
                  position:relative;
                  margin-bottom:50px;
                  :before{
                      content:'';
                     position:absolute;
                     top:100%;
-                    ${props => (props.right ? "right":"left")}:0;              
+                    ${props => (props.right ? "right" : "left")}:0;              
                     width: 40px;
                     height: 6px;
                     border-radius: 10px;
@@ -122,4 +117,3 @@ const WrapBlock = styled.div`
 `;
 
 
-    
