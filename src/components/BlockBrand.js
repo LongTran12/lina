@@ -23,19 +23,22 @@ const WrapBlock = styled.div`
     transition:transform 0.7s ease;
     flex-flow: column;
     background: #f4fbff;
-    margin-bottom:25px;
+    margin-bottom:30px;
     height:calc(100% - 25px);
     :hover{
         transform:translateY(-5px);
     }
     .logo-brand{
         background:#fff;
-        text-align:center
+        text-align:center;
+        border-top-left-radius:15px;
+        border-top-right-radius:15px;
         img{
             padding:40px 0 20px;
             background-size: contain;
             background-repeat: no-repeat;
-            background-position: center
+            background-position: center;
+            width:100%;
         }
     }
     .name-brand{

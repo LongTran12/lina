@@ -5,17 +5,16 @@ import SectionWhat from "./components/SectionWhat";
 import SectionInnovation from './components/SectionInnovation';
 import SectionIntro from './components/SectionIntro';
 import SectionTeam from './components/SectionTeam';
-import Header from './components/Header';
 import SectionAvisors from './components/SectionAvisors';
-import WrapSiteContext from './contexts/siteContext';
+// import WrapSiteContext from './contexts/siteContext';
 import SectionStragic from './components/SectionStragic';
 import SectionMedia from './components/SectionMedia';
-import Footer from './components/Footer'
+import SectionReview from './components/SectionReview';
+import SectionCharts from './components/SectionCharts';
 
 function App() {
     return (
-        <WrapSiteContext>
-            <Header />
+        <>
             <SectionSlider />
             <SectionWhat />
             <SectionInnovation />
@@ -24,8 +23,9 @@ function App() {
             <SectionAvisors />
             <SectionStragic />
             <SectionMedia />
-            <Footer />
-        </WrapSiteContext>
+            <SectionReview />
+            <SectionCharts />
+        </>
     );
 }
 

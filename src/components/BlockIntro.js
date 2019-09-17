@@ -1,31 +1,26 @@
 import React, { useState } from 'react';
 import styled from "styled-components";
-import { Row, Modal } from "antd";
+import { Row } from "antd";
 import { FaYoutube } from "react-icons/fa";
+import Modal from './Modal'
 
 export default function BlockIntro({ wrapBackgr, textIntro, colorText, discription, right, order, imageLink, youtubeLink }) {
-    const [modalOpen, setmodalOpen] = useState(false);
-    const openModal = () => {
-        setmodalOpen(!modalOpen);
-    }
+    const [isShow, setIsShow] = useState(false);
     return (
         <WrapBlock background={wrapBackgr} right={right} order={order}>
             <Row>
                 <WrapVideo >
                     <div className="modal-video">
                         <img src={imageLink} alt="" />
-                        <button className="btn-video" onClick={openModal}>
+                        <button className="btn-video" onClick={() => setIsShow(!isShow)}>
                             <FaYoutube />
                         </button>
-                        <Modal
-                            visible={modalOpen}
-                            onOk={openModal}
-                            onCancel={openModal}
+                        {isShow && <Modal
+                            isClose={() => setIsShow(false)}
                         >
-                            <VideoIframe>
-                                <iframe width="900px" height="800px" src={youtubeLink} frameborder="0" title="video"></iframe>
-                            </VideoIframe>
+                            <iframe width="900px" height="800px" src={youtubeLink} frameborder="0" title="video"></iframe>
                         </Modal>
+                        }
                     </div>
                     <div className="text-intro">
                         <TitleIntro colorText={colorText}>{textIntro}</TitleIntro>
@@ -61,19 +56,6 @@ const WrapVideo = styled.div`
         padding-right:40px;
         
     }
-`;
-const VideoIframe = styled.div`
-    position: relative;
-	padding-bottom: 52%; /* 16:9 */
-	padding-top: 25px;
-    
-    iframe {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
 `;
 const Descrip = styled.p`
     color:#fff;

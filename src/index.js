@@ -8,8 +8,29 @@ import 'antd/dist/antd.css';
 import './index.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import WrapSiteContext from './contexts/siteContext';
+import Header from './components/Header';
+import Footer from './components/Footer'
+import Qa from './pages/Qa';
+import Contact from './pages/Contact'
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+function Wrap() {
+    return (
+        <WrapSiteContext>
+            <Router>
+                <Header />
+                <Switch>
+                    <Route exact path="/" component={App} />
+                    <Route exact path="/q&a" component={Qa} />
+                    <Route exact path="/contact" component={Contact} />
+                </Switch>
+                <Footer />
+            </Router>
+        </WrapSiteContext>
+    );
+}
+ReactDOM.render(<Wrap />, document.getElementById('root'));
 
 
 // If you want your app to work offline and load faster, you can change

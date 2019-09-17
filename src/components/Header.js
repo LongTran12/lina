@@ -5,25 +5,40 @@ import vn from "../assets/images/641.png";
 import styled from 'styled-components';
 import { Row, Col } from 'antd';
 import { FaCaretDown } from "react-icons/fa";
-import { SiteContext } from '../contexts/siteContext'
+import { SiteContext } from '../contexts/siteContext';
+import { Link, NavLink } from "react-router-dom";
 
 export default function Header() {
     const { getLang, setLang, lang } = useContext(SiteContext)
     const [isOpen, setisOpen] = useState(false);
-
     return (
         <WrapHeader>
             <Row type="flex" justify="center" align="middle">
                 <Col span={11}>
-                    <a href="/" title="logo"><img src={logo} alt="logo" width="50px" height="72px" /></a>
+                    <Link to="/" title="logo"><img src={logo} alt="logo" width="50px" height="72px" /></Link>
                 </Col>
                 <Col span={11}>
                     <MenuList>
                         <ul>
                             <li><a href="#1">{getLang('news')}</a></li>
-                            <li><a href="#1">{getLang('q&a')}</a></li>
-                            <li><a href="#1">{getLang('whitepaper')}</a></li>
-                            <li><a href="#2">{getLang('contact')}</a></li>
+                            <li><NavLink activeClassName="active" to="/q&a">{getLang('q&a')}</NavLink></li>
+                            <li>
+                                <a href="#1">{getLang('whitepaper')}
+                                    <span><FaCaretDown></FaCaretDown></span>
+                                    <ul className="menu-child">
+                                        <li>
+                                            <a href="#2">English</a>
+
+                                        </li>
+                                        <li>
+                                            <a href="#3">VietNam</a>
+                                        </li>
+                                    </ul>
+                                </a>
+
+
+                            </li>
+                            <li><NavLink activeClassName="active" to="/contact">{getLang('contact')}</NavLink></li>
                             <li>
                                 <DropLang>
                                     <button className="language" onClick={() => setisOpen(!isOpen)}>
@@ -77,17 +92,48 @@ const MenuList = styled.div`
             flex-flow:row-wrap;
             justify-content:flex-end;
             >li{
+                position:relative;
                 padding:0 25px;
                 >a{
                      font-family: 'Montserrat', sans-serif;
                     font-size:18px;
                     font-weight:bold;
                     color:#fff;
-                        text-transform: capitalize;
+                    text-transform: capitalize;
+                    .menu-child{
+                        position:absolute;
+                        top:24px;
+                        right:0;
+                        transform:translateY(-20px);
+                        background:#fff;
+                        color:#202020;
+                        list-style:none;
+                        padding:0;
+                        transition:transform 0.5s ease;
+                        visibility:hidden;
+                        text-align:center;
+                        left:0;
+                        li{
+                            padding:10px 30px;
+                            a{
+                                text-align:center;
+                                text-decoration:none;
+                            }
+                        } 
+                    }
                     :hover{
                         color:#e8a236;
+                        text-decoration:none;
+                        .menu-child{
+                            transform:translateY(0);  
+                            visibility:visible; 
+                        }
+                    }
+                    &.active{
+                        color:#ffc23e;
                     }
                 }
+               
                 
             }
         }
