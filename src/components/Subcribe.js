@@ -1,64 +1,64 @@
 import React from 'react'
-import { Select,Row,Col} from 'antd';
+import { Select, Row, Col } from 'antd';
 import styled from 'styled-components';
 import imgusa from '../assets/images/640.png';
 import imgvn from '../assets/images/641.png';
-import {FaCaretDown} from 'react-icons/fa';
+import { FaCaretDown } from 'react-icons/fa';
 
 const { Option } = Select;
 export default function Subcribe() {
-    const handleChange =(value) => {
+    const handleChange = (value) => {
         console.log(`selected ${value}`);
     }
     return (
-        <Row type="flex" align="middle" justify="center"> 
-            <Col md={10} xs={24}> 
-             <WrapSelect>
-                <Select 
-                defaultValue={<LangDefault/>}
-                showArrow style={{ width: "100%" }}
-                onChange={handleChange} 
-                suffixIcon={<FlagLang/>}
-                >
-                {
-                    option.map((index,i) =>
-                        <Option key={i} value={index.value}>
-                            {index.name}<StyleOption>({index.location})</StyleOption>
-                            <span style={sty} className ="flag_lang"><img alt="" src={index.imglocation} width="35px"/></span>
-                        </Option>
-                    )
-                }   
-                </Select>
+        <Row>
+            <Col xxl={{ span: 10, offset: 0 }} lg={{ span: 10, offset: 0 }} md={{ span: 22, offset: 1 }}>
+                <WrapSelect>
+                    <Select
+                        defaultValue={<LangDefault />}
+                        showArrow style={{ width: "100%" }}
+                        onChange={handleChange}
+                        suffixIcon={<FlagLang />}
+                    >
+                        {
+                            option.map((index, i) =>
+                                <Option key={i} value={index.value}>
+                                    {index.name}<StyleOption>({index.location})</StyleOption>
+                                    <span style={sty} className="flag_lang"><img alt="" src={index.imglocation} width="35px" /></span>
+                                </Option>
+                            )
+                        }
+                    </Select>
                 </WrapSelect>
-                </Col>
-
-                <Col md={14} xs={24}>
-                <FormStyle>
-                   <input type="email" placeholder="ENTER YOUR EMAIL"/>
-                   <button>SUBCRIBE NEWLETTER</button>
-                 </FormStyle>
             </Col>
-           
+
+            <Col xxl={{ span: 14, offset: 0 }} lg={{ span: 14, offset: 0 }} md={{ span: 22, offset: 1 }}>
+                <FormStyle>
+                    <input type="email" placeholder="ENTER YOUR EMAIL" />
+                    <button>SUBCRIBE NEWLETTER</button>
+                </FormStyle>
+            </Col>
+
         </Row>
     )
 }
-function LangDefault(){
-    return(
-          <span className="flag_lang">
-                DOWNLOAD WHITEPAPERS  <img alt="" src={imgusa} width="35px" />
-            </span>
+function LangDefault() {
+    return (
+        <span className="flag_lang">
+            DOWNLOAD WHITEPAPERS  <img alt="" src={imgusa} width="35px" />
+        </span>
     );
 }
 function FlagLang() {
-    return (    
-            <span className="dropdown-text">
-                
-                <FaCaretDown />
-            </span>
+    return (
+        <span className="dropdown-text">
+
+            <FaCaretDown />
+        </span>
     )
 }
 const sty = {
-    "margin-left":"auto",
+    "margin-left": "auto",
 }
 const FormStyle = styled.form`
      font-family: Montserrat;
@@ -109,21 +109,26 @@ const WrapSelect = styled.div`
         margin-top:0;
         transform:translateY(-50%);
     }
-    
+    @media (max-width:992px){
+        .ant-select-selection--single{
+            border-right:2px solid #ccc;
+            margin-bottom:20px;
+        }    
+    }
     
 `;
 const option = [
     {
-        name:"Whitepapers",
-        value:'white-vn',
-        location:'vn',
-        imglocation:imgusa
+        name: "Whitepapers",
+        value: 'white-vn',
+        location: 'vn',
+        imglocation: imgusa
     },
-     {
-        name:"Whitepapers",
-        value:'white-usa',
-        location:'usa',
-        imglocation:imgvn
+    {
+        name: "Whitepapers",
+        value: 'white-usa',
+        location: 'usa',
+        imglocation: imgvn
     }
 ]
 const StyleOption = styled.span`

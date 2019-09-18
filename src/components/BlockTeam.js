@@ -6,10 +6,10 @@ import { FaLinkedinIn, FaFacebookF } from 'react-icons/fa';
 export default function BlockTeam({ imgAvatar, company, description, name, linkLinked, linkFace }) {
     return (
 
-        <Col lg={6} md={12} xs={24} className="mb-30">
+        <Col xxl={6} md={12} sm={12} xs={24} className="mb-30">
             <WrapBlock>
                 <div className="team-avatar">
-                    <img src={imgAvatar} alt="" />
+                    <img src={imgAvatar} alt="" width="100%" />
                 </div>
                 <div className="team-info">
                     <h3 title={name}><a href="#1">{name}</a></h3>
@@ -46,6 +46,7 @@ const WrapSocial = styled.div`
     }
 `;
 const WrapBlock = styled.div`
+    overflow:hidden;
     position:relative;
     top:0;
      min-height:400px;

@@ -13,8 +13,8 @@ import img5 from '../assets/images/image_gorverment-1.jpg';
 export default function SectionIntro() {
     return (
         <WrapIntro>
-            <Row type="flex" align="middle" justify="center">
-                <Col md={18}>
+            <Row>
+                <Col xxl={{ span: 18, offset: 3 }} md={{ span: 22, offset: 1 }} xs={{ span: 22, offset: 1 }}>
                     <HeadingTitle title="Introduction to LINA" colorTitle="#fff" subTitle="Get to know more about LINA" colorSub="#fff" />
                     {data.map((index, i) =>
                         <BlockIntro key={i} {...index} />

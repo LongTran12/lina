@@ -11,22 +11,27 @@ export default function Footer() {
     return (
         <>
             <BackWrapper>
-                <Row type="flex" justify="center" align="middle">
-                    <Col md={6} xs={24}>
-                        <div className="logo-left d-flex align-items-center">
-                            <img src={logo} alt="logo" width="64px" height="92" />
-                            <SpanInline> {getLang('LINA.NETWORK © Copyright 2018.')}</SpanInline>
-                        </div>
-                    </Col>
-                    <Col md={6} xs={24}>
-                        <Social></Social>
-                    </Col>
-                    <Col md={6} xs={24}>
-                        <UlFooter>
-                            <li><a href="#1">{getLang('terms')}</a></li>
-                            <li><a href="#1">{getLang('privacy policy')}</a></li>
-                            <li><a href="#1">{getLang('cookie policy')}</a></li>
-                        </UlFooter>
+                <Row >
+                    <Col xxl={{ span: 18, offset: 3 }} lg={{ span: 22, offset: 1 }} md={{ span: 22, offset: 1 }} xs={{ span: 22, offset: 1 }}>
+                        <Row type="flex" justify="center" align="middle">
+                            <Col xxl={8} md={8} sm={12} xs={24}>
+                                <div className="logo-left d-flex align-items-center">
+                                    <img src={logo} alt="logo" width="64px" height="92" />
+                                    <SpanInline> {getLang('LINA.NETWORK © Copyright 2018.')}</SpanInline>
+                                </div>
+                            </Col>
+                            <Col xxl={8} md={8} sm={12} xs={24}>
+                                <Social></Social>
+                            </Col>
+                            <Col xxl={8} md={8} sm={12} xs={24}>
+                                <UlFooter>
+                                    <li><a href="#1">{getLang('terms')}</a></li>
+                                    <li><a href="#1">{getLang('privacy policy')}</a></li>
+                                    <li><a href="#1">{getLang('cookie policy')}</a></li>
+                                </UlFooter>
+                            </Col>
+
+                        </Row>
                     </Col>
                 </Row>
             </BackWrapper>

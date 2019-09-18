@@ -9,7 +9,7 @@ export default function SectionAvisors() {
     return (
         <WrapTeam>
             <Row>
-                <Col md={18} offset={3}>
+                <Col xxl={{ span: 18, offset: 3 }} lg={{ span: 22, offset: 1 }} md={{ span: 22, offset: 1 }} xs={{ span: 22, offset: 1 }}>
                     <HeadingTitle title="Advisor" colorTitle="#fff" subTitle="We're always looking for talented people joun our team" colorSub="#fff" />
                     <Row gutter={80} type="flex" justify="center">
                         {data.map((index, i) =>
@@ -22,6 +22,7 @@ export default function SectionAvisors() {
     )
 }
 const WrapTeam = styled.div`
+    overflow:hidden;
     padding:100px 0;
     background:linear-gradient(135deg, #1c49df 0%, #1c49df 0%, #03e8f8 100%);
     .team-info *{

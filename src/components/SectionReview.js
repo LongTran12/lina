@@ -11,7 +11,7 @@ export default function SectionReview() {
     return (
         <WrapReview>
             <Row>
-                <Col xl={{ span: 18, offset: 3 }} xs={{ span: 24, offset: 0 }}>
+                <Col xxl={{ span: 18, offset: 3 }} lg={{ span: 22, offset: 1 }} md={{ span: 22, offset: 1 }} xs={{ span: 22, offset: 1 }}>
                     <HeadingTitle title="What reviewers say" />
                     <Row gutter={40} type="flex">
                         {

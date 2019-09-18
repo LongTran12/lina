@@ -11,7 +11,7 @@ export default function BlockIntro({ wrapBackgr, textIntro, colorText, discripti
             <Row>
                 <WrapVideo >
                     <div className="modal-video">
-                        <img src={imageLink} alt="" />
+                        <img src={imageLink} alt="" width="100%" />
                         <button className="btn-video" onClick={() => setIsShow(!isShow)}>
                             <FaYoutube />
                         </button>
@@ -36,9 +36,11 @@ const WrapVideo = styled.div`
     display:flex;
     position:relative;
     align-items:center;
+    flex-flow:row wrap;
     .modal-video{
         order:2;
         position:relative;
+        width:50%;
         button{
             font-size: 70px;
             color: red;
@@ -51,10 +53,24 @@ const WrapVideo = styled.div`
         }
     }
     .text-intro{
-        
-        padding-left:40px;
-        padding-right:40px;
-        
+        padding:20px 40px;
+        width:50%;
+    }
+    @media (max-width:1400px){
+        .modal-video{
+            width:40%;
+        }
+        .text-intro{
+            width:60%;
+        }
+    }
+      @media (max-width:1024px){
+        .modal-video{
+            width:100%;
+        }
+        .text-intro{
+            width:100%;
+        }
     }
 `;
 const Descrip = styled.p`

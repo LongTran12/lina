@@ -7,7 +7,7 @@ import Modal from './Modal';
 export default function BlockReview({ imageReview, linkReview, textReview }) {
     const [isShow, setIsShow] = useState(false);
     return (
-        <Col xl={{ span: 6 }} xs={{ span: 12 }}>
+        <Col xxl={6} md={8} sm={12} xs={24}>
             <WrapReview>
                 <div className="modal-video">
                     <img src={imageReview} alt="" />

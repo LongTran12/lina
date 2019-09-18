@@ -47,4 +47,12 @@ const WrapModal = styled.div`
         transform: translate(-50%,-50%);
         z-index:1105;
     }
+    @media (max-width:992px){
+        .modal-body{
+        iframe{
+            width: 93vw;
+            height: 50vh;
+        }
+    }
+    }
 `;

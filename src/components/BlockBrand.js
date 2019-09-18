@@ -4,7 +4,7 @@ import { Col } from "antd";
 
 export default function BlockBrand({ nameBrand, logoBrand }) {
     return (
-        <Col xl={6} lg={6} xs={12}>
+        <Col xxl={6} md={8} sm={12} xs={24}>
             <WrapBlock>
                 <div className="logo-brand">
                     <img src={logoBrand} alt={nameBrand} />

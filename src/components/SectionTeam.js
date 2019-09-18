@@ -9,9 +9,9 @@ export default function SectionTeam() {
     return (
         <WrapTeam>
             <Row>
-                <Col md={18} offset={3}>
+                <Col xxl={{ span: 18, offset: 3 }} lg={{ span: 22, offset: 1 }} md={{ span: 22, offset: 1 }} xs={{ span: 22, offset: 1 }}>
                     <HeadingTitle title="Team" subTitle="We're always looking for talented people joun our team" colorSub="#808080" />
-                    <Row gutter={80} type="flex" justify="center">
+                    <Row gutter={40} >
                         {data.map((index, i) =>
                             <BlockTeam key={i} {...index} />
                         )}

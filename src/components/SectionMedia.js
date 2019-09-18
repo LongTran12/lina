@@ -18,12 +18,12 @@ export default function SectionMedia() {
     return (
         <WrapMedia>
             <Row>
-                <Col lg={{ span: 18, offset: 3 }} xs={{ span: 24, offset: 0 }}>
+                <Col xxl={{ span: 18, offset: 3 }} lg={{ span: 22, offset: 1 }} md={{ span: 22, offset: 1 }} xs={{ span: 22, offset: 1 }}>
                     <HeadingTitle title="Media Mentions" subTitle="Let's see what media talks about us" />
                     <Row gutter={40}>
                         {
                             dataImage.map((index, i) => (
-                                <Col key={i} xl={6} lg={8} >
+                                <Col key={i} xxl={6} md={8} sm={12} xs={24} >
                                     <WrapImage>
                                         <img src={index.image} alt="" width="100%" />
                                     </WrapImage>

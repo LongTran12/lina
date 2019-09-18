@@ -8,8 +8,8 @@ import SliderInnovation from './SliderInnovation';
 export default function SectionInnovation() {
     return (
         <WrapInno>
-            <Row type="flex" align="middle" justify="center">
-                <Col md={23}>
+            <Row >
+                <Col xxl={{ span: 22, offset: 1 }} md={{ span: 22, offset: 1 }} xs={{ span: 22, offset: 1 }}>
                     <HeadingTitle
                         title="INNOVATION"
                         colorTitle="#fff"

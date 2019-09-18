@@ -9,8 +9,8 @@ export default function SectionSlider() {
     return (
         <>
             <WrapSlide>
-                <Row type="flex" align="middle" justify="center">
-                    <Col span={10}>
+                <Row >
+                    <Col xxl={{ span: 10, offset: 2 }} md={{ span: 22, offset: 1 }} xs={{ span: 22, offset: 1 }}>
                         <ButtonStyle>
                             LINA NETWORK
                       </ButtonStyle>
@@ -33,7 +33,7 @@ export default function SectionSlider() {
                             </WrapCommunity>
                         </BlockSlider>
                     </Col>
-                    <Col span={12}
+                    <Col xxl={{ span: 12 }} md={{ span: 22, offset: 1 }} xs={{ span: 22, offset: 1 }}
 
                     ></Col>
                 </Row>
@@ -81,6 +81,7 @@ const ButtonCommunity = styled.button`
     color: rgb(255, 255, 255);
     letter-spacing: 2px;
     margin-right:15px;
+    margin-bottom:10px;
     border:0;
     border-radius:3px;
     padding:21px 24px;
@@ -94,12 +95,12 @@ const WrapSlide = styled.div`
         padding-top:300px;
         padding-bottom:100px;
         color:#fff;
+        background-size:cover;
     `;
 const BlockSlider = styled.div`
         h1{
             font-size:80px;
             line-height:80px;
-            white-space:nowrap;
             font-weight:600;
             margin-bottom:45px;
             color:#fff;

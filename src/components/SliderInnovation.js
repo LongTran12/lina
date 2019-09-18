@@ -12,77 +12,110 @@ import Slider from "react-slick";
 export default function WhatSlider() {
     return (
         <WrapSlider>
-            <Slider { ...setting }>
-            {
-                data.map((index,i)=>
-                    <DataSlider key={i} className={"slider-what " + index.backgr} >
-                       <WrapH>
-                            <div className="s-image">
-                            <ImageLu src={index.image} alt={index.title}/>
-                        </div>     
-                        <div className="s-title">
-                            <h3>{index.title}</h3>
-                        </div>  
-                        <div className="s-detail">
-                            <p>{index.details}</p>
-                        </div>    
-                        </WrapH>
-                    </DataSlider>
-                )
-            }
-            </Slider>      
+            <Slider {...setting}>
+                {
+                    data.map((index, i) =>
+                        <DataSlider key={i} className={"slider-what " + index.backgr} >
+                            <WrapH>
+                                <div className="s-image">
+                                    <ImageLu src={index.image} alt={index.title} />
+                                </div>
+                                <div className="s-title">
+                                    <h3>{index.title}</h3>
+                                </div>
+                                <div className="s-detail">
+                                    <p>{index.details}</p>
+                                </div>
+                            </WrapH>
+                        </DataSlider>
+                    )
+                }
+            </Slider>
         </WrapSlider>
     )
 }
 
 const setting = {
-  dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 6,
-      slidesToScroll: 1,
-      
+    dots: true,
+    arrows: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 6,
+    slidesToScroll: 1,
+    responsive: [
+        {
+            breakpoint: 1400,
+            settings: {
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: true
+            }
+        },
+        {
+            breakpoint: 992,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+            }
+        },
+        {
+            breakpoint: 767,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+            }
+        },
+        {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }
+    ]
+
 }
 
 const data = [
     {
-        id:1,
-        image:inno1,
-        title:"Transparency",
-        details:"The Review and Rating results are completely transparent to the users and everyone can verify it.",
+        id: 1,
+        image: inno1,
+        title: "Transparency",
+        details: "The Review and Rating results are completely transparent to the users and everyone can verify it.",
     },
     {
-        id:2,
-        image:inno2,
-        title:"Monetizing Ability",
-        details:"Reviewers and Helpers (Expert) can earn LINA token basing on the quality of their contribution, judged by the community.",
+        id: 2,
+        image: inno2,
+        title: "Monetizing Ability",
+        details: "Reviewers and Helpers (Expert) can earn LINA token basing on the quality of their contribution, judged by the community.",
     },
     {
-        id:3,
-        image:inno3,
-        title:"Specific Criteria",
-        details:"LINA.REVIEW has introduced a set of criteria applied to more than 20 fields ranging from technological products to medical services.",
+        id: 3,
+        image: inno3,
+        title: "Specific Criteria",
+        details: "LINA.REVIEW has introduced a set of criteria applied to more than 20 fields ranging from technological products to medical services.",
     },
     {
-        id:4,
-        image:inno4,
-        title:"Hybrid Architecture",
-        details:"Introduces a hybrid architecture approach, bridging between public Ethereum chain (mainnet) and a high performance, scalable private side-blockchain transaction services.",
+        id: 4,
+        image: inno4,
+        title: "Hybrid Architecture",
+        details: "Introduces a hybrid architecture approach, bridging between public Ethereum chain (mainnet) and a high performance, scalable private side-blockchain transaction services.",
     },
     {
-        id:5,
-        image:inno5,
-        title:"Large Helpers Network",
-        details:"We have built a large and expanding community of professionals all around the world. Everyone are welcome to join.",
+        id: 5,
+        image: inno5,
+        title: "Large Helpers Network",
+        details: "We have built a large and expanding community of professionals all around the world. Everyone are welcome to join.",
     },
-     {
-        id:6,
-        image:inno6,
-        title:"Can not be manipulated",
-        details:"The assessment and rating score is decentralized so it cannot be faked or manipulated by any third party.",
+    {
+        id: 6,
+        image: inno6,
+        title: "Can not be manipulated",
+        details: "The assessment and rating score is decentralized so it cannot be faked or manipulated by any third party.",
     }
 ]
-const WrapH= styled.div`
+const WrapH = styled.div`
    display: flex;
       height: auto;
       align-items: center; 
@@ -96,7 +129,7 @@ const ImageLu = styled.img`
     width:80px;
     margin-bottom:45px;
 `;
-const WrapSlider =styled.div`
+const WrapSlider = styled.div`
     margin-bottom:60px;
     .slick-slide {
         padding:5px 15px;

@@ -3,7 +3,7 @@ import logo from "../assets/images/logo-lina-1.png";
 import usa from "../assets/images/64.png";
 import vn from "../assets/images/641.png";
 import styled from 'styled-components';
-import { Row, Col } from 'antd';
+import { Row, Col, Icon } from 'antd';
 import { FaCaretDown } from "react-icons/fa";
 import { SiteContext } from '../contexts/siteContext';
 import { Link, NavLink } from "react-router-dom";
@@ -11,6 +11,7 @@ import { Link, NavLink } from "react-router-dom";
 export default function Header() {
     const { getLang, setLang, lang } = useContext(SiteContext)
     const [isOpen, setisOpen] = useState(false);
+    const [isMenu, setisMenu] = useState(true)
     return (
         <WrapHeader>
             <Row type="flex" justify="center" align="middle">
@@ -19,7 +20,8 @@ export default function Header() {
                 </Col>
                 <Col span={11}>
                     <MenuList>
-                        <ul>
+                        <button className="menu-btn" onClick={() => setisMenu(!isMenu)}><Icon type="align-right" /></button>
+                        {isMenu && <><ul>
                             <li><a href="#1">{getLang('news')}</a></li>
                             <li><NavLink activeClassName="active" to="/q&a">{getLang('q&a')}</NavLink></li>
                             <li>
@@ -72,7 +74,12 @@ export default function Header() {
 
                                 </DropLang>
                             </li>
+
                         </ul>
+                            <div className="wrap-close" onClick={() => setisMenu(false)} />
+                        </>
+
+                        }
                     </MenuList>
                 </Col>
             </Row>
@@ -85,6 +92,10 @@ const WrapHeader = styled.div`
         padding:10px 0;
     `;
 const MenuList = styled.div`
+        .menu-btn{
+            display:none;
+        }
+        
         >ul{
             list-style:none;
             display:flex;
@@ -113,6 +124,7 @@ const MenuList = styled.div`
                         visibility:hidden;
                         text-align:center;
                         left:0;
+                        z-index:9999;
                         li{
                             padding:10px 30px;
                             a{
@@ -136,6 +148,42 @@ const MenuList = styled.div`
                
                 
             }
+        }
+        @media (max-width:1200px){
+             .menu-btn{
+                display:block;
+                position:absolute;
+                right:20px;
+                top:0;    
+                z-index:2;
+                font-size:30px;
+                background:transparent;
+                border:0;
+                color:#fff;
+             }
+             >ul{
+                flex-flow: column;
+                position: fixed;
+                right: 0;
+                background: #111;
+                height: 100vh;
+                top: 0;
+                justify-content: center;
+                z-index:12;
+                >li{
+                   padding:15px 25px;
+                } 
+            }
+            .wrap-close{
+                    background: rgba(0,0,0,.34);
+                    position: fixed;
+                    width: 100vw;
+                    height: 100vh;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%,-50%);
+                    z-index:5;
+                }
         }
     `;
 const DropLang = styled.div`
