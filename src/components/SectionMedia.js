@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import HeadingTitle from './HeadingTitle';
 import styled from 'styled-components';
 import { Row, Col } from 'antd';
@@ -8,18 +8,21 @@ import logo3 from '../assets/images/logo-12.png';
 import logo4 from '../assets/images/logo-13.png';
 import logo5 from '../assets/images/logo-14.png';
 import logo6 from '../assets/images/logo-15.png';
-import logo7 from '../assets/images/logo-26.png';
-import logo8 from '../assets/images/logo-30.png';
-
-
-
+import logo7 from '../assets/images/logo-16.gif';
+import logo8 from '../assets/images/logo-17.jpg';
+import logo9 from '../assets/images/logo-18.png';
+import logo10 from '../assets/images/logo-19.jpg';
+import logo11 from '../assets/images/logo-26.png';
+import logo12 from '../assets/images/logo-30.png';
+import { SiteContext } from '../contexts/siteContext';
 
 export default function SectionMedia() {
+    const { getLang } = useContext(SiteContext)
     return (
         <WrapMedia>
             <Row>
                 <Col xxl={{ span: 18, offset: 3 }} lg={{ span: 22, offset: 1 }} md={{ span: 22, offset: 1 }} xs={{ span: 22, offset: 1 }}>
-                    <HeadingTitle title="Media Mentions" subTitle="Let's see what media talks about us" />
+                    <HeadingTitle title={getLang("Media Mentions")} subTitle={getLang("Let's see what media talks about us")} />
                     <Row gutter={40}>
                         {
                             dataImage.map((index, i) => (
@@ -88,5 +91,17 @@ const dataImage = [
     },
     {
         image: logo8
+    },
+    {
+        image: logo9
+    },
+    {
+        image: logo10
+    },
+    {
+        image: logo11
+    },
+    {
+        image: logo12
     },
 ]

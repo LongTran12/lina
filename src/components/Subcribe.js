@@ -1,21 +1,37 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Select, Row, Col } from 'antd';
 import styled from 'styled-components';
 import imgusa from '../assets/images/640.png';
 import imgvn from '../assets/images/641.png';
 import { FaCaretDown } from 'react-icons/fa';
+import { SiteContext } from '../contexts/siteContext'
 
 const { Option } = Select;
 export default function Subcribe() {
+    const { getLang } = useContext(SiteContext)
     const handleChange = (value) => {
         console.log(`selected ${value}`);
     }
+    const option = [
+        {
+            name: getLang('Whitepapers USA'),
+            value: 'white-vn',
+            location: 'vn',
+            imglocation: imgusa
+        },
+        {
+            name: getLang('Whitepapers VN'),
+            value: 'white-usa',
+            location: 'usa',
+            imglocation: imgvn
+        }
+    ]
     return (
         <Row>
             <Col xxl={{ span: 10, offset: 0 }} lg={{ span: 10, offset: 0 }} md={{ span: 22, offset: 1 }}>
                 <WrapSelect>
                     <Select
-                        defaultValue={<LangDefault />}
+                        defaultValue='white-usa'
                         showArrow style={{ width: "100%" }}
                         onChange={handleChange}
                         suffixIcon={<FlagLang />}
@@ -24,7 +40,9 @@ export default function Subcribe() {
                             option.map((index, i) =>
                                 <Option key={i} value={index.value}>
                                     {index.name}<StyleOption>({index.location})</StyleOption>
-                                    <span style={sty} className="flag_lang"><img alt="" src={index.imglocation} width="35px" /></span>
+                                    <span style={{
+                                        marginLeft: "auto"
+                                    }} className="flag_lang"><img alt="" src={index.imglocation} width="35px" /></span>
                                 </Option>
                             )
                         }
@@ -34,21 +52,15 @@ export default function Subcribe() {
 
             <Col xxl={{ span: 14, offset: 0 }} lg={{ span: 14, offset: 0 }} md={{ span: 22, offset: 1 }}>
                 <FormStyle>
-                    <input type="email" placeholder="ENTER YOUR EMAIL" />
-                    <button>SUBCRIBE NEWLETTER</button>
+                    <input type="email" placeholder={getLang('ENTER YOUR EMAIL')} />
+                    <button>{getLang('SUBCRIBE NEWLETTER')}</button>
                 </FormStyle>
             </Col>
 
         </Row>
     )
 }
-function LangDefault() {
-    return (
-        <span className="flag_lang">
-            DOWNLOAD WHITEPAPERS  <img alt="" src={imgusa} width="35px" />
-        </span>
-    );
-}
+
 function FlagLang() {
     return (
         <span className="dropdown-text">
@@ -56,9 +68,6 @@ function FlagLang() {
             <FaCaretDown />
         </span>
     )
-}
-const sty = {
-    "margin-left": "auto",
 }
 const FormStyle = styled.form`
      font-family: Montserrat;
@@ -117,20 +126,7 @@ const WrapSelect = styled.div`
     }
     
 `;
-const option = [
-    {
-        name: "Whitepapers",
-        value: 'white-vn',
-        location: 'vn',
-        imglocation: imgusa
-    },
-    {
-        name: "Whitepapers",
-        value: 'white-usa',
-        location: 'usa',
-        imglocation: imgvn
-    }
-]
+
 const StyleOption = styled.span`
     color:#08c9f3;
     padding-left:5px;

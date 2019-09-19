@@ -1,25 +1,28 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import backgr from "../assets/images/main-banner-bg.png";
 import styled from "styled-components";
 import { Row, Col } from 'antd';
 import { IoIosSend } from "react-icons/io";
 import { FaFacebookF, FaTwitter, FaRedditAlien, FaMediumM } from "react-icons/fa";
+import imgsl from '../assets/images/main-banner-sl.png'
+import { SiteContext } from '../contexts/siteContext';
 
 export default function SectionSlider() {
+    const { getLang } = useContext(SiteContext);
     return (
         <>
             <WrapSlide>
                 <Row >
                     <Col xxl={{ span: 10, offset: 2 }} md={{ span: 22, offset: 1 }} xs={{ span: 22, offset: 1 }}>
                         <ButtonStyle>
-                            LINA NETWORK
-                      </ButtonStyle>
+                            {getLang('LINA NETWORK')}
+                        </ButtonStyle>
                         <BlockSlider>
-                            <h1>Network Platform</h1>
-                            <p>Ecosystem with Review, Supplychain, Healthcare, Identity and more, powered and connected by <span>BLOCKCHAIN</span></p>
+                            <h1>{getLang('Network Platform')}</h1>
+                            <p>{getLang('Ecosystem with Review, Supplychain, Healthcare, Identity and more, powered and connected by')} <span>{getLang('BLOCKCHAIN')}</span></p>
                             <WrapCommunity>
-                                <h4>International Commmunity</h4>
-                                <ButtonCommunity><IoIosSend></IoIosSend>JOIN TELEGRAM</ButtonCommunity>
+                                <h4>{getLang('International Commmunity')}</h4>
+                                <ButtonCommunity><IoIosSend></IoIosSend>{getLang('JOIN TELEGRAM')}</ButtonCommunity>
                                 <ButtonCommunity><FaFacebookF></FaFacebookF></ButtonCommunity>
                                 <ButtonCommunity><FaTwitter></FaTwitter></ButtonCommunity>
                                 <ButtonCommunity><FaRedditAlien></FaRedditAlien></ButtonCommunity>
@@ -27,15 +30,16 @@ export default function SectionSlider() {
                             </WrapCommunity>
                             <SpanDot></SpanDot>
                             <WrapCommunity>
-                                <h4>Vietnam Commmunity</h4>
-                                <ButtonCommunity><IoIosSend></IoIosSend>JOIN TELEGRAM</ButtonCommunity>
+                                <h4>{getLang('Vietnam Commmunity')}</h4>
+                                <ButtonCommunity><IoIosSend></IoIosSend>{getLang('JOIN TELEGRAM')}</ButtonCommunity>
                                 <ButtonCommunity><FaFacebookF></FaFacebookF></ButtonCommunity>
                             </WrapCommunity>
                         </BlockSlider>
                     </Col>
-                    <Col xxl={{ span: 12 }} md={{ span: 22, offset: 1 }} xs={{ span: 22, offset: 1 }}
-
-                    ></Col>
+                    <Col xxl={{ span: 11, offset: 0 }} md={{ span: 22, offset: 1 }} xs={{ span: 22, offset: 1 }}
+                    >
+                        <img src={imgsl} alt="slide" width="100%" />
+                    </Col>
                 </Row>
             </WrapSlide>
         </>

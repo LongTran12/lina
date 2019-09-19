@@ -1,19 +1,21 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import HeadingTitle from "./HeadingTitle";
 import { WhatSlider } from "./WhatSlider";
 import styled from 'styled-components';
 import bglina from '../assets/images/bg-top-lina.jpg';
 import { Row, Col } from "antd";
 import Subcribe from "./Subcribe";
+import { SiteContext } from '../contexts/siteContext'
 
 
 export default function SectionWhat() {
+    const { getLang } = useContext(SiteContext)
     return (
         <>
             <WrapWhat>
-                <Row type="flex" align="middle" justify="center">
-                    <Col span={18}>
-                        <HeadingTitle title="What is LINA" subTitle="" color="#202020" />
+                <Row >
+                    <Col xxl={{ span: 18, offset: 3 }} lg={{ span: 22, offset: 1 }} md={{ span: 22, offset: 1 }} xs={{ span: 22, offset: 1 }}>
+                        <HeadingTitle title={getLang('What is LINA')} color="#202020" />
                         <WhatSlider />
                         <Subcribe></Subcribe>
                     </Col>

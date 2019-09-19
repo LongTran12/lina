@@ -13,17 +13,17 @@ export default function Footer() {
             <BackWrapper>
                 <Row >
                     <Col xxl={{ span: 18, offset: 3 }} lg={{ span: 22, offset: 1 }} md={{ span: 22, offset: 1 }} xs={{ span: 22, offset: 1 }}>
-                        <Row type="flex" justify="center" align="middle">
-                            <Col xxl={8} md={8} sm={12} xs={24}>
+                        <Row>
+                            <Col xxl={8} md={24} sm={24} xs={24}>
                                 <div className="logo-left d-flex align-items-center">
                                     <img src={logo} alt="logo" width="64px" height="92" />
                                     <SpanInline> {getLang('LINA.NETWORK © Copyright 2018.')}</SpanInline>
                                 </div>
                             </Col>
-                            <Col xxl={8} md={8} sm={12} xs={24}>
+                            <Col xxl={8} md={24} sm={24} xs={24}>
                                 <Social></Social>
                             </Col>
-                            <Col xxl={8} md={8} sm={12} xs={24}>
+                            <Col xxl={8} md={24} sm={24} xs={24}>
                                 <UlFooter>
                                     <li><a href="#1">{getLang('terms')}</a></li>
                                     <li><a href="#1">{getLang('privacy policy')}</a></li>
@@ -42,6 +42,12 @@ const BackWrapper = styled.div`
          background:linear-gradient(135deg, #1c49df 0%, #1c49df 0%, #03e8f8 100%);
          padding-top:70px;
          padding-bottom:70px;
+         @media (min-width:320px){
+             .logo-left{
+                 justify-content:center;
+                 margin-bottom:30px;
+             }
+         }
     `;
 const SpanInline = styled.span`
         color:#fff;
@@ -78,4 +84,8 @@ const UlFooter = styled.ul`
             }
         }
     }
-   `;
+    @media (min-width:320px){
+        margin-top:30px;
+        justify-content:center;
+    }
+`;

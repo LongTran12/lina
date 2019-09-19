@@ -1,15 +1,54 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import inno1 from "../assets/images/icon_innova1.png";
 import inno2 from "../assets/images/icon_innova2.png";
 import inno3 from "../assets/images/icon_innova3.png";
 import inno4 from "../assets/images/icon_innova4.png";
 import inno5 from "../assets/images/icon_innova5.png";
 import inno6 from "../assets/images/icon_innova6.png";
-
 import styled from 'styled-components';
 import Slider from "react-slick";
+import { SiteContext } from '../contexts/siteContext'
 
 export default function WhatSlider() {
+    const { getLang } = useContext(SiteContext)
+    const data = [
+        {
+            id: 1,
+            image: inno1,
+            title: getLang("Transparency"),
+            details: getLang("The Review and Rating results are completely transparent to the users and everyone can verify it."),
+        },
+        {
+            id: 2,
+            image: inno2,
+            title: getLang("Monetizing Ability"),
+            details: getLang("Reviewers and Helpers (Expert) can earn LINA token basing on the quality of their contribution, judged by the community."),
+        },
+        {
+            id: 3,
+            image: inno3,
+            title: getLang("Specific Criteria"),
+            details: getLang("LINA.REVIEW has introduced a set of criteria applied to more than 20 fields ranging from technological products to medical services."),
+        },
+        {
+            id: 4,
+            image: inno4,
+            title: getLang("Hybrid Architecture"),
+            details: getLang("Introduces a hybrid architecture approach, bridging between public Ethereum chain (mainnet) and a high performance, scalable private side-blockchain transaction services."),
+        },
+        {
+            id: 5,
+            image: inno5,
+            title: getLang("Large Helpers Network"),
+            details: getLang("We have built a large and expanding community of professionals all around the world. Everyone are welcome to join."),
+        },
+        {
+            id: 6,
+            image: inno6,
+            title: getLang("Can not be manipulated"),
+            details: getLang("The assessment and rating score is decentralized so it cannot be faked or manipulated by any third party."),
+        }
+    ]
     return (
         <WrapSlider>
             <Slider {...setting}>
@@ -77,44 +116,7 @@ const setting = {
 
 }
 
-const data = [
-    {
-        id: 1,
-        image: inno1,
-        title: "Transparency",
-        details: "The Review and Rating results are completely transparent to the users and everyone can verify it.",
-    },
-    {
-        id: 2,
-        image: inno2,
-        title: "Monetizing Ability",
-        details: "Reviewers and Helpers (Expert) can earn LINA token basing on the quality of their contribution, judged by the community.",
-    },
-    {
-        id: 3,
-        image: inno3,
-        title: "Specific Criteria",
-        details: "LINA.REVIEW has introduced a set of criteria applied to more than 20 fields ranging from technological products to medical services.",
-    },
-    {
-        id: 4,
-        image: inno4,
-        title: "Hybrid Architecture",
-        details: "Introduces a hybrid architecture approach, bridging between public Ethereum chain (mainnet) and a high performance, scalable private side-blockchain transaction services.",
-    },
-    {
-        id: 5,
-        image: inno5,
-        title: "Large Helpers Network",
-        details: "We have built a large and expanding community of professionals all around the world. Everyone are welcome to join.",
-    },
-    {
-        id: 6,
-        image: inno6,
-        title: "Can not be manipulated",
-        details: "The assessment and rating score is decentralized so it cannot be faked or manipulated by any third party.",
-    }
-]
+
 const WrapH = styled.div`
    display: flex;
       height: auto;

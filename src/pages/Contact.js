@@ -1,15 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Breadcrumb from '../components/Breadcrumb'
 import Maps from '../components/Maps'
 import { Row, Col } from 'antd'
 import styled from 'styled-components'
 import ContactInfo from '../components/ContactInfo'
 import ContactMails from '../components/ContactMails'
+import { SiteContext } from '../contexts/siteContext'
 
 export default function Contact() {
+    const { getLang } = useContext(SiteContext)
     return (
         <Wrap>
-            <Breadcrumb title="Contact Us" />
+            <Breadcrumb title={getLang("Contact Us")} />
             <Row>
                 <Col>
                     <Maps />

@@ -4,7 +4,7 @@ import { Row } from "antd";
 import { FaYoutube } from "react-icons/fa";
 import Modal from './Modal'
 
-export default function BlockIntro({ wrapBackgr, textIntro, colorText, discription, right, order, imageLink, youtubeLink }) {
+export default function BlockIntro({ wrapBackgr, textIntro, colorText, discription, right, order, imageLink, youtubeLink, isButton }) {
     const [isShow, setIsShow] = useState(false);
     return (
         <WrapBlock background={wrapBackgr} right={right} order={order}>
@@ -12,15 +12,17 @@ export default function BlockIntro({ wrapBackgr, textIntro, colorText, discripti
                 <WrapVideo >
                     <div className="modal-video">
                         <img src={imageLink} alt="" width="100%" />
-                        <button className="btn-video" onClick={() => setIsShow(!isShow)}>
+                        {isButton && <button className="btn-video" onClick={() => setIsShow(!isShow)}>
                             <FaYoutube />
                         </button>
+                        }
                         {isShow && <Modal
                             isClose={() => setIsShow(false)}
                         >
                             <iframe width="900px" height="800px" src={youtubeLink} frameborder="0" title="video"></iframe>
                         </Modal>
                         }
+
                     </div>
                     <div className="text-intro">
                         <TitleIntro colorText={colorText}>{textIntro}</TitleIntro>
@@ -73,7 +75,7 @@ const WrapVideo = styled.div`
         }
     }
 `;
-const Descrip = styled.p`
+const Descrip = styled.div`
     color:#fff;
     font-family: Montserrat;
     font-weight: 400;

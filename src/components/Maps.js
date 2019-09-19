@@ -12,9 +12,9 @@ export function Maps(props) {
                 google={props.google}
                 zoom={8}
                 style={mapStyles}
-                initialCenter={{ lat: 21.0123706, lng: 105.8347968 }}
+                initialCenter={{ lat: 10.8696387, lng: 106.3766298 }}
             >
-                <Marker position={{ lat: 21.0123706, lng: 105.8347968 }} />
+                <Marker position={{ lat: 10.8696387, lng: 106.3766298 }} />
             </Map>
         </Wrap>
     )

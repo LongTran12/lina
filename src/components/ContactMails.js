@@ -1,17 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
+import { SiteContext } from '../contexts/siteContext';
 
 export default function ContactMails() {
+    const { getLang } = useContext(SiteContext)
     return (
 
         <Wrap>
             <h3>Send a Message</h3>
             <form>
-                <input type="text" placeholder="Full Name" name="name" className="input-text" />
-                <input type="email" placeholder="Your Email" name="email" className="input-text" />
-                <textarea name="message" id="message" cols="30" rows="3">Your message</textarea>
+                <input type="text" placeholder={getLang("Full Name")} name="name" className="input-text" />
+                <input type="email" placeholder={getLang("Your Email")} name="email" className="input-text" />
+                <textarea name="message" id="message" cols="30" rows="3" value={getLang('Your message')}></textarea>
                 <p>
-                    <input type="submit" value="Send Message" />
+                    <input type="submit" value={getLang("Send Message")} />
                 </p>
             </form>
         </Wrap>

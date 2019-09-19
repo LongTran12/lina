@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import styled from 'styled-components'
+import { SiteContext } from '../contexts/siteContext';
 
 export default function BlockQuestion({ id, title, content, children }) {
     const [isOpen, setisOpen] = useState(false);
+    const { getLang } = useContext(SiteContext)
     return (
         <WrapBlock>
             <div className="block-title">
@@ -10,7 +12,7 @@ export default function BlockQuestion({ id, title, content, children }) {
                 <button
                     onClick={() => setisOpen(!isOpen)}
                 >
-                    {isOpen ? "Hide Answer" : "Show Answer"}
+                    {isOpen ? getLang("Hide Answer") : getLang("Show Answer")}
                 </button>
             </div>
             {isOpen && <div className="block-content">
@@ -30,6 +32,7 @@ const WrapBlock = styled.div`
         justify:center;
         align-items:center;
         margin-bottom:20px;
+        flex-flow:row wrap;
         h3{
             position: relative;          
             margin-bottom: 0;
@@ -66,5 +69,15 @@ const WrapBlock = styled.div`
         margin-bottom: 30px;
         position: relative;
         line-height:1.7em;
+    }
+    @media (max-width:1024px){
+        .block-title{
+            align-items: flex-start;
+            flex-flow: column wrap;
+            button{
+                margin-left:30px;
+                margin-top:25px;
+            }
+        }   
     }
 `;

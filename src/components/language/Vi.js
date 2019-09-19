@@ -7,5 +7,6 @@ export default {
     'LINA.NETWORK © Copyright 2018.': "Bản quyền thuộc về LINA.NETWORK",
     'terms': 'Điều kiện',
     'privacy policy': 'Chính sách bảo mật',
-    'cookie policy': 'Chính sách Cookie'
+    'cookie policy': 'Chính sách Cookie',
+    'LINA NETWORK': 'LINA NETWORK a'
 };

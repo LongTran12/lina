@@ -6,6 +6,12 @@ import HeadingTitle from './HeadingTitle';
 import img1 from "../assets/images/review-1.jpg";
 import img2 from "../assets/images/review-2.jpg";
 import img3 from "../assets/images/review-3.jpg";
+import img4 from "../assets/images/review-4.jpg";
+import img5 from "../assets/images/review-5.jpg";
+import img6 from "../assets/images/review-6.jpg";
+import img7 from "../assets/images/review-7.jpg";
+import img8 from "../assets/images/review-8.jpg";
+import img9 from "../assets/images/review-9.jpg";
 
 export default function SectionReview() {
     return (
@@ -32,32 +38,48 @@ const dataReview = [
     {
         imageReview: img1,
         linkReview: "https://www.youtube.com/embed/GG8hQ6-Pi-4",
-        textReview: "TAMAO Chanel"
+        textReview: "SANEM AVCIL Channel"
     },
     {
         imageReview: img2,
-        linkReview: "https://www.youtube.com/embed/GG8hQ6-Pi-4",
-        textReview: "TAMAO Chanel Hello world in the. what is your name?"
+        linkReview: "https://www.youtube.com/embed/25YihGuLwUc",
+        textReview: "CoinVlog Channel"
     },
     {
         imageReview: img3,
-        linkReview: "https://www.youtube.com/embed/GG8hQ6-Pi-4",
-        textReview: "TAMAO Chanel"
+        linkReview: "https://www.youtube.com/embed/I6SocLGany8",
+        textReview: "MOONRADIUS Channel"
     },
     {
-        imageReview: img1,
-        linkReview: "https://www.youtube.com/embed/GG8hQ6-Pi-4",
-        textReview: "TAMAO Chanel"
+        imageReview: img4,
+        linkReview: "https://www.youtube.com/embed/JCUzc1ygxd8",
+        textReview: "AnhreviewICO Channel"
     },
     {
-        imageReview: img2,
-        linkReview: "https://www.youtube.com/embed/GG8hQ6-Pi-4",
-        textReview: "TAMAO Chanel"
+        imageReview: img5,
+        linkReview: "https://www.youtube.com/embed/Wa3AhOc6g4I",
+        textReview: "Bounty ICO Channel"
     },
 
     {
-        imageReview: img2,
-        linkReview: "https://www.youtube.com/embed/GG8hQ6-Pi-4",
-        textReview: "TAMAO Chanel"
+        imageReview: img6,
+        linkReview: "https://www.youtube.com/embed/xRPg2lsyoNg",
+        textReview: "TRADING-IG Channel "
+    },
+    {
+        imageReview: img7,
+        linkReview: "https://www.youtube.com/embed/E23sIJfZP7Q",
+        textReview: "The first supply chain management based on Blockchain Platform "
+    },
+    {
+        imageReview: img8,
+        linkReview: "https://www.youtube.com/embed/RpdlrTvIKiU",
+        textReview: "Parliament Television of Viet Nam"
+    },
+
+    {
+        imageReview: img9,
+        linkReview: "https://www.youtube.com/embed/grDWdjkcjQI",
+        textReview: "Lina Review on VTV1"
     }
 ]

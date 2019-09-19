@@ -1,19 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
+import { SiteContext } from '../contexts/siteContext';
 
 export default function ContactInfo() {
+    const { getLang } = useContext(SiteContext)
     return (
         <Wrap>
-            <h3>Contact info</h3>
-            <p>Join our worldwide reviewer community unlike any others.
-                 Accelerate your products via collaboration opportunities with top reviewer,
-                  influencer, specific industry professionals and networking events</p>
+            <h3>{getLang('Contact info')}</h3>
+            <p>{getLang('Join our worldwide reviewer community unlike any others.Accelerate your products via collaboration opportunities with top reviewer,influencer, specific industry professionals and networking events')}</p>
             <div className="info address">
-                <h5>Address</h5>
-                <p>1435 Nguyen Van Linh Street,  Tan Phong Ward, District 7, Ho Chi Minh City</p>
+                <h5>{getLang('Address')}</h5>
+                <p>{getLang('1435 Nguyen Van Linh Street,  Tan Phong Ward, District 7, Ho Chi Minh City')}</p>
             </div>
             <div className="info phone">
-                <h5>Phone</h5>
+                <h5>{getLang('Phone')}</h5>
                 <p>(+84) 213 321 2314</p>
             </div>
             <div className="info email">

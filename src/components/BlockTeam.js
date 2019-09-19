@@ -49,7 +49,7 @@ const WrapBlock = styled.div`
     overflow:hidden;
     position:relative;
     top:0;
-     min-height:400px;
+     min-height:430px;
     text-align: center;
     padding:0 20px 30px;
     overflow: hidden;
@@ -64,6 +64,8 @@ const WrapBlock = styled.div`
         img{
             border-radius:30px;
             transform:scale(1);
+            width:262px;
+            height:262px;
         }
     }
     .team-info{

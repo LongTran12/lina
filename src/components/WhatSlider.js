@@ -22,29 +22,29 @@ export function WhatSlider() {
         {
             id: 2,
             image: lina2,
-            title: "Supply Chain",
-            details: "Apply traditional supply chain on blockchain. As a result, companies that partner with LINA can rebuild their supply chain management more efficiently and reduce expenses.",
+            title: getLang('Supply Chain'),
+            details: getLang('Apply traditional supply chain on blockchain. As a result, companies that partner with LINA can rebuild their supply chain management more efficiently and reduce expenses.'),
             backgr: "bg_pink",
         },
         {
             id: 3,
             image: lina3,
-            title: "LINA",
-            details: "An infinite ecosystem on Crypto platforms",
+            title: getLang('LINA'),
+            details: getLang('An infinite ecosystem on Crypto platforms'),
             backgr: "bg_purple",
         },
         {
             id: 4,
             image: lina4,
-            title: "Healthcare",
-            details: "Create history data of patient, hospitals where patients were in in the past transparently and accurately.",
+            title: getLang('Healthcare'),
+            details: getLang('Create history data of patient, hospitals where patients were in in the past transparently and accurately.'),
             backgr: "bg_blue",
         },
         {
             id: 5,
             image: lina5,
-            title: "E-Government",
-            details: "Provide new technology for government management. Cumbersome administrative procedures will be removed, saving time and money.",
+            title: getLang('E-Government'),
+            details: getLang('Provide new technology for government management. Cumbersome administrative procedures will be removed, saving time and money.'),
             backgr: "bg_green",
         }
     ]

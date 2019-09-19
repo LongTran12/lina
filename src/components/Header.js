@@ -25,7 +25,7 @@ export default function Header() {
                             <li><a href="#1">{getLang('news')}</a></li>
                             <li><NavLink activeClassName="active" to="/q&a">{getLang('q&a')}</NavLink></li>
                             <li>
-                                <a href="#1">{getLang('whitepaper')}
+                                <button className="parent-menu">{getLang('whitepaper')}
                                     <span><FaCaretDown></FaCaretDown></span>
                                     <ul className="menu-child">
                                         <li>
@@ -36,7 +36,7 @@ export default function Header() {
                                             <a href="#3">VietNam</a>
                                         </li>
                                     </ul>
-                                </a>
+                                </button>
 
 
                             </li>
@@ -94,8 +94,7 @@ const WrapHeader = styled.div`
 const MenuList = styled.div`
         .menu-btn{
             display:none;
-        }
-        
+        }      
         >ul{
             list-style:none;
             display:flex;
@@ -132,7 +131,7 @@ const MenuList = styled.div`
                                 text-decoration:none;
                             }
                         } 
-                    }
+                    }                   
                     :hover{
                         color:#e8a236;
                         text-decoration:none;
@@ -144,11 +143,52 @@ const MenuList = styled.div`
                     &.active{
                         color:#ffc23e;
                     }
-                }
-               
-                
+                }  
             }
+            .parent-menu{
+                 font-family: 'Montserrat', sans-serif;
+                font-size:18px;
+                font-weight:bold;
+                color:#fff;
+                text-transform: capitalize;
+                border:0;
+                background:transparent;
+                .menu-child{
+                    position:absolute;
+                    top:24px;
+                    right:0;
+                    transform:translateY(-20px);
+                    background:#fff;
+                    color:#202020;
+                    list-style:none;
+                    padding:0;
+                    transition:transform 0.5s ease;
+                    visibility:hidden;
+                    text-align:center;
+                    left:0;
+                    z-index:9999;
+                    li{
+                        padding:10px 30px;
+                        a{
+                            text-align:center;
+                            text-decoration:none;                           
+                        }
+                    } 
+                }
+                :hover{
+                color:#e8a236;
+                text-decoration:none;
+                    .menu-child{
+                        transform:translateY(0);  
+                        visibility:visible; 
+                    }
+                }
+                &.active{
+                    color:#ffc23e;
+                }
+            }  
         }
+        
         @media (max-width:1200px){
              .menu-btn{
                 display:block;

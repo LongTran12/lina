@@ -1,18 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components'
 import Charts from './Charts'
 import HeadingTitle from './HeadingTitle'
 import { Row, Col } from 'antd'
+import { SiteContext } from '../contexts/siteContext';
 
 export default function SectionCharts() {
+    const { getLang } = useContext(SiteContext)
     return (
         <Wrap>
             <Row>
                 <Col lg={{ span: 18, offset: 3 }} xs={{ span: 24, offset: 0 }}>
                     <HeadingTitle
-                        title="LINA Token"
+                        title={getLang("LINA Token")}
                         colorTitle="#fff"
-                        subTitle="Budget Allocation"
+                        subTitle={getLang("Budget Allocation")}
                         colorSub="#deeeff"
                     />
 
@@ -24,15 +26,15 @@ export default function SectionCharts() {
                     <WrapVolumn>
                         <Row>
                             <Col md={8} xs={24} className="volumn volumn-1">
-                                <h4>TotalVolumn</h4>
+                                <h4>{getLang('TotalVolumn')}</h4>
                                 <div><span>900,000,000</span> LINA</div>
                             </Col>
                             <Col md={8} xs={24} className="volumn volumn-2">
-                                <h4>TotalVolumn</h4>
+                                <h4>{getLang('ICO VOLUME')}</h4>
                                 <div><span>900,000,000</span> LINA</div>
                             </Col>
                             <Col md={8} xs={24} className="volumn volumn-3">
-                                <h4>TotalVolumn</h4>
+                                <h4>{getLang('BLOCKED BY SMART CONTRACT')}</h4>
                                 <div><span>900,000,000</span> LINA</div>
                             </Col>
 
