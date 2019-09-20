@@ -99,4 +99,5 @@ export default function SectionTeam() {
 }
 const WrapTeam = styled.div`
     padding:100px 0;
+    overflow:hidden;
 `;

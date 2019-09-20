@@ -1,5 +1,6 @@
 import React from 'react'
 import { Pie } from 'react-chartjs-2';
+import styled from 'styled-components'
 
 const data = {
     datasets: [{
@@ -36,13 +37,21 @@ const options = {
     animation: {
         duration: 2000,
         easing: 'linear'
-    }
+    },
+    // responsive: true,
+    maintainAspectRatio: false,
 }
 
 export default function Charts() {
     return (
-        <>
+        <Wrap>
             <Pie data={data} options={options} />
-        </>
+        </Wrap>
     );
 }
+const Wrap = styled.div`
+    height:500px;
+    canvas{
+       height:100%;
+    }
+`;

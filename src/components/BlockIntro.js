@@ -19,7 +19,7 @@ export default function BlockIntro({ wrapBackgr, textIntro, colorText, discripti
                         {isShow && <Modal
                             isClose={() => setIsShow(false)}
                         >
-                            <iframe width="900px" height="800px" src={youtubeLink} frameborder="0" title="video"></iframe>
+                            <iframe width="900px" height="800px" src={youtubeLink} frameBorder="0" title="video"></iframe>
                         </Modal>
                         }
 
@@ -43,7 +43,7 @@ const WrapVideo = styled.div`
         order:2;
         position:relative;
         width:50%;
-        button{
+        >button{
             font-size: 70px;
             color: red;
             position:absolute;
@@ -73,6 +73,11 @@ const WrapVideo = styled.div`
         .text-intro{
             width:100%;
         }
+        @media (max-width:600px){
+       
+        .text-intro{
+           padding:20px;
+        }
     }
 `;
 const Descrip = styled.div`
@@ -92,6 +97,9 @@ const TitleIntro = styled.h3(props => ({
 }))
 
 const WrapBlock = styled.div`
+        *{
+           font-family: Montserrat;
+        }
        background-color :${props => (props.background ? props.background : "transparent")};
        padding:40px;
        border-radius:15px;
@@ -114,6 +122,22 @@ const WrapBlock = styled.div`
             }
        }
        margin-bottom:30px;
+       @media (max-width:576px){
+           padding:25px;
+            .text-intro{
+                text-align:center;
+                h3{
+                    font-size:25px;
+                    text-align:center;
+                    margin-top:15px;
+                    :before{
+                        left:50% !important;
+                        right:auto !important;
+                        transform:translateX(-50%);
+                    }
+                }
+            }
+       }
 `;
 
 

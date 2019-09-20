@@ -58,7 +58,7 @@ export default function SectionStragic() {
     return (
         <WrapBrand>
             <Row>
-                <Col xxl={{ span: 18, offset: 3 }} lg={{ span: 22, offset: 1 }} md={{ span: 22, offset: 1 }} xs={{ span: 22, offset: 1 }}>
+                <Col xxl={{ span: 18, offset: 3 }} xl={{ span: 18, offset: 3 }} lg={{ span: 22, offset: 1 }} md={{ span: 22, offset: 1 }} sm={{ span: 20, offset: 2 }} xs={{ span: 20, offset: 2 }}>
                     <HeadingTitle title={getLang("Strategic Partners")} colorTitle="#fff" />
                     <Row className="brand" gutter={40}>
                         {dataBrand.map((index, i) => (
@@ -74,6 +74,7 @@ export default function SectionStragic() {
 const WrapBrand = styled.div`
     background-image:url(${img_back});
     padding:100px 0;
+    overflow:hidden;
     .brand{
         display:flex;
         flex-flow: row wrap;

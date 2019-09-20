@@ -27,14 +27,18 @@ const WrapModal = styled.div`
         z-index:1200;
     }
     .close-modal{
-        position:fixed;
-        left:100%;
-        top:0;
+        
         button{
-            font-size:50px;
-            background:transparent;
-            border:0;
-            z-index:1106;
+            font-size: 50px;
+            background: transparent;
+            border: 0;
+            z-index: 1106;
+            right: 0;
+            top: -51px;
+            color: #fff;
+            position: absolute;
+            cursor: pointer;
+            transform: translateY(0);
         }
     }
     .wrap-close{

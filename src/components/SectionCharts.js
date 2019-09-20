@@ -19,25 +19,24 @@ export default function SectionCharts() {
                     />
 
                 </Col>
-                <Col lg={{ span: 14, offset: 5 }} xs={{ span: 22, offset: 1 }}>
+                <Col xxl={{ span: 14, offset: 5 }} xl={{ span: 14, offset: 5 }} lg={{ span: 20, offset: 2 }} md={{ span: 20, offset: 2 }} sm={{ span: 22, offset: 1 }} xs={{ span: 22, offset: 1 }}>
                     <Charts />
                 </Col>
-                <Col lg={{ span: 18, offset: 3 }} xs={{ span: 22, offset: 1 }}>
+                <Col xxl={{ span: 18, offset: 3 }} xl={{ span: 18, offset: 3 }} lg={{ span: 20, offset: 2 }} sm={{ span: 22, offset: 1 }} xs={{ span: 22, offset: 1 }}>
                     <WrapVolumn>
                         <Row>
-                            <Col md={8} xs={24} className="volumn volumn-1">
+                            <Col xxl={8} xl={8} lg={24} md={24} sm={24} xs={24} className="volumn volumn-1">
                                 <h4>{getLang('TotalVolumn')}</h4>
                                 <div><span>900,000,000</span> LINA</div>
                             </Col>
-                            <Col md={8} xs={24} className="volumn volumn-2">
+                            <Col xxl={8} xl={8} lg={24} md={24} sm={24} xs={24} className="volumn volumn-2">
                                 <h4>{getLang('ICO VOLUME')}</h4>
-                                <div><span>900,000,000</span> LINA</div>
+                                <div><span>300,000,000</span> LINA</div>
                             </Col>
-                            <Col md={8} xs={24} className="volumn volumn-3">
+                            <Col xxl={8} xl={8} lg={24} md={24} sm={24} xs={24} className="volumn volumn-3">
                                 <h4>{getLang('BLOCKED BY SMART CONTRACT')}</h4>
-                                <div><span>900,000,000</span> LINA</div>
+                                <div><span>600,000,000</span> LINA</div>
                             </Col>
-
                         </Row>
                     </WrapVolumn>
                 </Col>
@@ -78,11 +77,29 @@ const WrapVolumn = styled.div`
         &.volumn-3{
             border-radius: 0 10px 10px 0;
             border-left:0;
+        }  
+    }
+    @media (max-width:1200px){
+        .volumn{
+            &.volumn-1{
+                border-radius: 10px 10px 0 0;
+                border-right:1px solid #2a469e;
+            }
+            &.volumn-2{
+                border-top:0;
+                border-bottom:0;
+            }
+            &.volumn-3{
+                border-radius: 0 0 10px 10px;
+                border-left:0;
+                border-left:1px solid #2a469e;
+            } 
         }
-        
     }
 `;
 const Wrap = styled.div`
     padding:100px 0 140px;
     background:#10297a;
+    height:100%;
+    overflow:hidden;
 `;

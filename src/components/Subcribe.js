@@ -76,7 +76,7 @@ const FormStyle = styled.form`
     position:relative;
     border:2px solid #ccc;
     input[type="email"]{
-        padding:28px 45px;
+        padding: 28px 25% 28px 45px;
         font-size:16px;
         border:0;
         flex-basis:100%;
@@ -94,6 +94,19 @@ const FormStyle = styled.form`
         font-size:16px;
         :hover{
             color:#202020;
+        }
+    }
+    @media (max-width:480px){
+        border:0;
+        input[type="email"]{
+            padding: 28px 45px 28px 45px;
+            border:2px solid #ccc;
+            width:100%;
+        }
+        button{
+            position:static;
+            text-align:center;
+            width:100%;
         }
     }
 `;

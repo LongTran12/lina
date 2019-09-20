@@ -130,7 +130,7 @@ export default function SectionAvisors() {
     return (
         <WrapTeam>
             <Row>
-                <Col xxl={{ span: 18, offset: 3 }} lg={{ span: 22, offset: 1 }} md={{ span: 22, offset: 1 }} xs={{ span: 22, offset: 1 }}>
+                <Col xxl={{ span: 18, offset: 3 }} xl={{ span: 18, offset: 3 }} lg={{ span: 22, offset: 1 }} md={{ span: 22, offset: 1 }} sm={{ span: 22, offset: 1 }} xs={{ span: 22, offset: 1 }}>
                     <HeadingTitle title={getLang("Advisor")} colorTitle="#fff" subTitle={getLang("We're always looking for talented people joun our team")} colorSub="#fff" />
                     <Row gutter={40} type="flex" justify="center">
                         {data.map((index, i) =>

@@ -100,6 +100,7 @@ const WrapSlide = styled.div`
         padding-bottom:100px;
         color:#fff;
         background-size:cover;
+        overflow:hidden;
     `;
 const BlockSlider = styled.div`
         h1{

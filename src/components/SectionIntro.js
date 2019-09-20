@@ -14,6 +14,43 @@ export default function SectionIntro() {
     const { getLang } = useContext(SiteContext)
     const data = [
         {
+            id: 6,
+            wrapBackgr: "#071c5f",
+            textIntro: getLang("What is ABS Guarantee?"),
+            colorText: "#9b34da",
+            order: "1",
+            discription: <DataDes6 />,
+            imageLink: img5,
+            isButton: true,
+            youtubeLink: "https:////www.youtube.com/embed/j3XSZ6J8brM?autoplay=1"
+        },
+        {
+            id: 7,
+            textIntro: getLang("Game Daap Number Lucky"),
+            colorText: "#ce4b77",
+            discription: <DataDes7 />,
+            imageLink: img5,
+            isButton: false,
+        },
+        {
+            id: 8,
+            textIntro: getLang("What is OTC Exchange"),
+            wrapBackgr: "#071c5f",
+            colorText: "#ce4b77",
+            order: "1",
+            discription: <DataDes8 />,
+            imageLink: img5,
+            isButton: false,
+        },
+        {
+            id: 9,
+            textIntro: getLang("What is LINA BUSTER?"),
+            colorText: "#70cd8b",
+            discription: <DataDes9 />,
+            imageLink: img5,
+            isButton: false,
+        },
+        {
             id: 1,
             wrapBackgr: "#071c5f",
             textIntro: getLang("LINA"),
@@ -65,43 +102,7 @@ export default function SectionIntro() {
             isButton: true,
             youtubeLink: "https:////www.youtube.com/embed/FOXVOnVIjTc?autoplay=1"
         },
-        {
-            id: 6,
-            textIntro: getLang("What is ABS Guarantee?"),
-            colorText: "#9b34da",
-            order: "1",
-            discription: <DataDes6 />,
-            imageLink: img5,
-            isButton: true,
-            youtubeLink: "https:////www.youtube.com/embed/j3XSZ6J8brM?autoplay=1"
-        },
-        {
-            id: 7,
-            wrapBackgr: "#071c5f",
-            textIntro: getLang("Game Daap Number Lucky"),
-            colorText: "#ce4b77",
-            discription: <DataDes7 />,
-            imageLink: img5,
-            isButton: false,
-        },
-        {
-            id: 8,
-            textIntro: getLang("What is OTC Exchange"),
-            colorText: "#ce4b77",
-            order: "1",
-            discription: <DataDes8 />,
-            imageLink: img5,
-            isButton: false,
-        },
-        {
-            id: 9,
-            wrapBackgr: "#071c5f",
-            textIntro: getLang("What is LINA BUSTER?"),
-            colorText: "#70cd8b",
-            discription: <DataDes9 />,
-            imageLink: img5,
-            isButton: false,
-        },
+
     ]
     return (
         <WrapIntro>
@@ -211,4 +212,5 @@ function DataDes9() {
 const WrapIntro = styled.div`
     background: #10297a;
 padding: 100px 0;
+overflow:hidden;
 `;

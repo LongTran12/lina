@@ -26,7 +26,7 @@ export default function SectionMedia() {
                     <Row gutter={40}>
                         {
                             dataImage.map((index, i) => (
-                                <Col key={i} xxl={6} md={8} sm={12} xs={24} >
+                                <Col key={i} xxl={6} xl={6} lg={6} md={8} sm={12} xs={12} >
                                     <WrapImage>
                                         <img src={index.image} alt="" width="100%" />
                                     </WrapImage>
@@ -43,6 +43,7 @@ export default function SectionMedia() {
 const WrapMedia = styled.div`
     position:relative;
     padding:100px 0;
+    overflow:hidden;
     :before{
         content:'';
         width:75%;

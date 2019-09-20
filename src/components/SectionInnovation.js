@@ -28,4 +28,5 @@ export default function SectionInnovation() {
 const WrapInno = styled.div`
     padding:100px 0;
     background-image:url(${mainImage});
+    overflow:hidden;
 `;

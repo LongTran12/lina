@@ -6,7 +6,7 @@ import { FaLinkedinIn, FaFacebookF } from 'react-icons/fa';
 export default function BlockTeam({ imgAvatar, company, description, name, linkLinked, linkFace }) {
     return (
 
-        <Col xxl={6} md={12} sm={12} xs={24} className="mb-30">
+        <Col xxl={6} xl={6} lg={8} md={8} sm={12} xs={24} className="mb-30">
             <WrapBlock>
                 <div className="team-avatar">
                     <img src={imgAvatar} alt="" width="100%" />
@@ -132,6 +132,14 @@ const WrapBlock = styled.div`
                 bottom: 0;
                 right: 0;
            }
+        }
+    }
+    @media (max-width:480px){
+        .team-avatar {
+            img{
+                width:100%;
+                height:262px;
+            }
         }
     }
 `;

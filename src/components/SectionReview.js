@@ -33,6 +33,7 @@ export default function SectionReview() {
 }
 const WrapReview = styled.div`
     padding:100px 0;
+    overflow:hidden;
 `;
 const dataReview = [
     {

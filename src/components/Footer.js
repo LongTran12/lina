@@ -12,7 +12,7 @@ export default function Footer() {
         <>
             <BackWrapper>
                 <Row >
-                    <Col xxl={{ span: 18, offset: 3 }} lg={{ span: 22, offset: 1 }} md={{ span: 22, offset: 1 }} xs={{ span: 22, offset: 1 }}>
+                    <Col xxl={{ span: 18, offset: 3 }} xl={{ span: 18, offset: 3 }} lg={{ span: 22, offset: 1 }} md={{ span: 22, offset: 1 }} sm={{ span: 22, offset: 1 }} xs={{ span: 22, offset: 1 }}>
                         <Row>
                             <Col xxl={8} md={24} sm={24} xs={24}>
                                 <div className="logo-left d-flex align-items-center">
@@ -59,6 +59,7 @@ const UlFooter = styled.ul`
     align-items:center;
     justify-content:flex-end;
     list-style:none;
+    flex-flow:row wrap;
     li{
         padding:0 10px;
         position:relative;
