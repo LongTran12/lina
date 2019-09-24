@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import logo from "../assets/images/logo-lina-1.png";
+import logo from "../assets/images/logo_buster.png";
 import usa from "../assets/images/64.png";
 import vn from "../assets/images/641.png";
 import styled from 'styled-components';
@@ -16,31 +16,72 @@ export default function Header() {
         <WrapHeader>
             <Row>
                 <Col span={11} offset={1}>
-                    <Link to="/" title="logo"><img src={logo} alt="logo" width="50px" height="72px" /></Link>
+                    <Link to="/" title="logo"><img src={logo} alt="logo" height="130px" /></Link>
                 </Col>
                 <Col span={11} offset={1}>
                     <MenuList>
                         <button className="menu-btn" onClick={() => setisMenu(!isMenu)}><Icon type="align-right" /></button>
                         <ul className={`menu-desktop ${isMenu === true ? "menu-on" : "menu-off"}`}>
-                            <li><a href="#1">{getLang('news')}</a></li>
-                            <li><NavLink activeClassName="active" to="/q&a">{getLang('q&a')}</NavLink></li>
+                            <li><NavLink activeClassName="active" to="/">{getLang('Home')}</NavLink></li>
+                            <li><NavLink activeClassName="active" to="/invest">{getLang('Invest')}</NavLink></li>
+                            <li><NavLink activeClassName="active" to="/login">{getLang('Login')}</NavLink></li>
                             <li>
-                                <button className="parent-menu">{getLang('whitepaper')}
-                                    <span><FaCaretDown></FaCaretDown></span>
-                                    <ul className="menu-child">
-                                        <li>
-                                            <a href="#2">English</a>
+                                <DropMenu>
+                                    <button className="dropdown-menu-child">
+                                        {getLang('Game')}
+                                        <span><FaCaretDown></FaCaretDown></span>
+                                    </button>
+                                    <ul className="ul-lang">
+                                        <li><NavLink activeClassName="active" to="/exchange">
 
-                                        </li>
+                                            {getLang('Exchange')}</NavLink></li>
+                                        <li><a href="https://erc20buster.com/">{getLang('Number Lucky Lottery')}</a></li>
+                                        <li><NavLink activeClassName="active" to="/ecosystem">{getLang('Ecosytem')}</NavLink></li>
+                                        <li><NavLink activeClassName="active" to="/statistic">{getLang('Statistic')}</NavLink></li>
+                                        <li><NavLink activeClassName="active" to="/q&a">{getLang('Q&A')}</NavLink></li>
+                                        <li><a href="https://drive.google.com/file/d/1KiOe9PWq9fFGoAYWwdo4HjoyPl97G-pP/edit" >{getLang('LINA TOKEN')}</a></li>
+                                        <li><NavLink activeClassName="active" to="/contact">{getLang('Contact')}</NavLink></li>
                                         <li>
-                                            <a href="#3">VietNam</a>
+                                            <button className="parent-menu">{getLang('About Us')}
+                                                <span><FaCaretDown></FaCaretDown></span>
+                                                <ul className="dropmenu-child">
+                                                    <li>
+                                                        <a href="https://www.youtube.com/channel/UCMpqXYP-w8rUO5WPfbeYa3g/featured">{getLang('Youtube')}</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://t.me/erc20linavietnam">{getLang('Telegram')}</a>
+                                                    </li>
+                                                    <li>
+                                                        <NavLink to="/">{getLang('Contract')}</NavLink>
+                                                    </li>
+
+                                                </ul>
+                                            </button>
                                         </li>
                                     </ul>
-                                </button>
-
-
+                                </DropMenu>
                             </li>
-                            <li><NavLink activeClassName="active" to="/contact">{getLang('contact')}</NavLink></li>
+                            <li>
+                                <DropMenu>
+                                    <button className="dropdown-menu-child">
+                                        {getLang('Help')}
+                                        <span><FaCaretDown></FaCaretDown></span>
+                                    </button>
+                                    <ul className="ul-lang">
+                                        <li><NavLink activeClassName="active" to="/">{getLang('English Documents')}</NavLink></li>
+                                        <li><a href="https://erc20buster.com/" >{getLang('Chinese Documents')}</a></li>
+                                        <li><NavLink activeClassName="active" to="/">{getLang('Japanese Documents')}</NavLink></li>
+                                        <li><NavLink activeClassName="active" to="/">{getLang('Korean Documents')}</NavLink></li>
+                                        <li><NavLink activeClassName="active" to="/">{getLang('Russian Documents')}</NavLink></li>
+                                        <li><NavLink activeClassName="active" to="/">{getLang('Indonesian Documents')}</NavLink></li>
+                                        <li><a href="#1" >{getLang('BusterFund Contract')}</a></li>
+                                        <li><NavLink activeClassName="active" to="/" >{getLang('FTB Contract')}</NavLink></li>
+                                    </ul>
+
+
+                                </DropMenu>
+                            </li>
+
                             <li>
                                 <DropLang>
                                     <button className="language" onClick={() => setisOpen(!isOpen)}>
@@ -98,11 +139,13 @@ const MenuList = styled.div`
             list-style:none;
             display:flex;
             align-items:center;
-            flex-flow:row-wrap;
+            flex-flow:row wrap;
             justify-content:flex-end;
+            
             >li{
                 position:relative;
-                padding:0 25px;
+                padding:0 20px;
+                margin-bottom:10px;
                 >a{
                      font-family: 'Montserrat', sans-serif;
                     font-size:18px;
@@ -166,6 +209,7 @@ const MenuList = styled.div`
                     text-align:center;
                     left:0;
                     z-index:9999;
+                    min-width:175px;
                     li{
                         padding:10px 30px;
                         a{
@@ -209,6 +253,9 @@ const MenuList = styled.div`
                 top: -40px;
                 justify-content: center;
                 z-index:12;
+                overflow-y:auto;
+                padding-left:0;
+                min-width:70vw;
                 >li{
                    padding:15px 25px;
                 } 
@@ -217,6 +264,11 @@ const MenuList = styled.div`
                 }
                 &.menu-off{
                     right:-100%;
+                }
+                .parent-menu{
+                    .menu-child{
+                        top:45px;
+                    }
                 }
 
             }
@@ -238,70 +290,216 @@ const MenuList = styled.div`
         }
     `;
 const DropLang = styled.div`
-        @keyframes mymove {
-            from {top: 20px;}
-            to {top: 40px;}
+    @keyframes mymove {
+        from {top: 20px;}
+        to {top: 40px;}
+    }
+    position:relative;
+    .language{
+        border:1px solid #999;
+        border-radius:5px;
+        font-size:14px;
+        font-family:"Poppins";
+        font-weight:normal;
+        padding:5px 15px;
+        background:transparent;
+        color:#fff;
+        text-transform: capitalize;
+        display:flex;
+        align-items:center;
+        img{
+            padding-right:5px;
         }
-        position:relative;
-        .language{
-            border:1px solid #999;
-            border-radius:5px;
-            font-size:14px;
-            font-family:"Poppins";
-            font-weight:normal;
-            padding:5px 15px;
-            background:transparent;
-            color:#fff;
-            text-transform: capitalize;
+    }
+    ul{
+        padding:0;
+        position:absolute;
+        right:0;
+        top:40px;
+        background:#fff;
+        animation:mymove 1s ease;
+        li{                
             display:flex;
-            align-items:center;
-            img{
-                padding-right:5px;
+            .child-language{
+                display:flex;
+                font-size:14px;
+                font-family:"Poppins";
+                font-weight:normal;
+                padding:10px 30px;
+                background:transparent;
+                color:#202020;
+                text-transform: capitalize;
+                border:0;
+                background:transparent;
+                align-items:center;
+                width:100%;
+                img{
+                    padding-right:5px;
+                }                
+            }
+            :first-child{
+                border-bottom:1px solid #ebebeb;
+            }
+            :hover{
+                background:#fbfbfb;
             }
         }
-            ul{
-                padding:0;
-                position:absolute;
-                right:0;
-                top:40px;
-                background:#fff;
-                animation:mymove 1s ease;
-                li{                
-                    display:flex;
-                    .child-language{
-                        display:flex;
-                        font-size:14px;
-                        font-family:"Poppins";
-                        font-weight:normal;
-                        padding:10px 30px;
-                        background:transparent;
-                        color:#202020;
-                        text-transform: capitalize;
-                        border:0;
-                        background:transparent;
-                        align-items:center;
-                        width:100%;
-                        img{
-                            padding-right:5px;
-                        }                
-                    }
-                    :first-child{
-                        border-bottom:1px solid #ebebeb;
-                    }
-                    :hover{
-                        background:#fbfbfb;
+        :before{
+            content:'';
+            width:20px;
+            height:10px;
+            background:#fff;
+            position:absolute;
+            top:0;
+            right:0;
+            transform:rotate(45deg);
+        }
+    }    
+`;
+const DropMenu = styled.div`
+    @keyframes mymove {
+        from {top: 20px;}
+        to {top: 40px;}
+    }
+    position:relative;
+    .dropdown-menu-child{
+        border:0;
+        font-size:18px;
+        font-weight:bold;
+        background:transparent;
+        color:#fff;
+        text-transform: capitalize;
+        display:flex;
+        align-items:center;
+    }
+    >ul{
+        padding:0;
+        position:absolute;
+        right:0;
+        top:40px;
+        background:#fff;
+        animation:mymove 1s ease;
+        min-width:270px;
+        z-index:99;
+        visibility: hidden;
+        >li{                
+            display:flex;  
+            border-bottom:1px solid #ebebeb;
+            justify-content:flex-end;
+            a{
+                z-index:2;
+                font-size:16px;
+                padding:10px 20px;
+                text-align:right;
+                color:#222;
+                width: 100%;
+            }
+            .child-language{
+                display:flex;
+                font-size:14px;
+                font-family:"Poppins";
+                font-weight:normal;
+                padding:10px 30px;
+                background:transparent;
+                color:#202020;
+                text-transform: capitalize;
+                border:0;
+                background:transparent;
+                align-items:center;
+                width:100%;
+                img{
+                    padding-right:5px;
+                }                
+            }
+            :last-child{
+                border-bottom:0;
+            }
+            :hover{
+                background:#fbfbfb;
+                background-color:#ebebeb;
+            }
+            >button.parent-menu{
+                z-index:2;
+                font-size:16px;
+                padding:10px 20px;
+                text-align:right;
+                color:#222;
+                position: relative;
+                width: 100%;
+                :hover{
+                    .dropmenu-child{
+                        visibility:visible;
                     }
                 }
-                :before{
-                    content:'';
-                    width:20px;
-                    height:10px;
-                    background:#fff;
+                .dropmenu-child{
                     position:absolute;
-                    top:0;
-                    right:0;
-                    transform:rotate(45deg);
+                    top:17px;
+                    transform:translateY(-20px);
+                    background:#fff;
+                    color:#202020;
+                    list-style:none;
+                    padding:0;
+                    transition:transform 0.5s ease;
+                    visibility:hidden;
+                    text-align:center;
+                    right:100%;
+                    z-index:9999;
+                    min-width:175px;
+                    li{
+                        padding:10px 30px;
+                        a{
+                            text-align:center;
+                            text-decoration:none;                           
+                        }
+                        :hover{
+                            background-color:#ebebeb;
+                        }
+                    } 
                 }
             }
-        
-    `;
+        }
+        :before{
+            content:'';
+            width:20px;
+            height:10px;
+            background:#fff;
+            position:absolute;
+            top:0;
+            right:0;
+            transform:rotate(45deg);
+            z-index:1;
+        }
+       
+    }  
+    :hover{
+        >ul{
+            visibility: visible;
+            transition:all 0.5s ease;
+            top:30px;
+        }
+    }  
+    @media (max-width:1024px){
+        >ul{
+            left:50%;
+            right:auto;
+            transform:translateX(-50%);
+            :before{
+                height:0;
+            }
+            >li{
+                justify-content:center;
+                a{
+                    text-align:center;
+                }
+                >button.parent-menu{
+                    text-align:center;
+                    .dropmenu-child{
+                        top:64px;
+                        min-width:100%;
+                        right:0;
+                    }
+                }
+            }
+        }
+    }
+`;

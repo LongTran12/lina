@@ -8,14 +8,26 @@ import img2 from '../assets/images/image-supply.jpg';
 import img3 from '../assets/images/image-review.jpg';
 import img4 from '../assets/images/image-healthy.jpg';
 import img5 from '../assets/images/image_gorverment-1.jpg';
+import img7 from '../assets/images/erc20buster.png';
+import img8 from '../assets/images/otc_exchange.png';
+import img9 from '../assets/images/images_buster.png';
 import { SiteContext } from '../contexts/siteContext';
 
 export default function SectionIntro() {
     const { getLang } = useContext(SiteContext)
     const data = [
         {
-            id: 6,
+            id: 9,
             wrapBackgr: "#071c5f",
+            textIntro: getLang("What is BUSTER.FUND?"),
+            colorText: "#70cd8b",
+            discription: <DataDes9 />,
+            imageLink: img9,
+            isButton: false,
+
+        },
+        {
+            id: 6,
             textIntro: getLang("What is ABS Guarantee?"),
             colorText: "#9b34da",
             order: "1",
@@ -26,30 +38,25 @@ export default function SectionIntro() {
         },
         {
             id: 7,
+            wrapBackgr: "#071c5f",
             textIntro: getLang("Game Daap Number Lucky"),
             colorText: "#ce4b77",
             discription: <DataDes7 />,
-            imageLink: img5,
+            imageLink: img7,
             isButton: false,
+            href: "https://erc20buster.com/"
         },
         {
             id: 8,
-            textIntro: getLang("What is OTC Exchange"),
-            wrapBackgr: "#071c5f",
+            textIntro: getLang("OTC Exchange"),
+
             colorText: "#ce4b77",
             order: "1",
             discription: <DataDes8 />,
-            imageLink: img5,
+            imageLink: img8,
             isButton: false,
         },
-        {
-            id: 9,
-            textIntro: getLang("What is LINA BUSTER?"),
-            colorText: "#70cd8b",
-            discription: <DataDes9 />,
-            imageLink: img5,
-            isButton: false,
-        },
+
         {
             id: 1,
             wrapBackgr: "#071c5f",

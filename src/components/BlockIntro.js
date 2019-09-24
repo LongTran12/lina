@@ -4,14 +4,16 @@ import { Row } from "antd";
 import { FaYoutube } from "react-icons/fa";
 import Modal from './Modal'
 
-export default function BlockIntro({ wrapBackgr, textIntro, colorText, discription, right, order, imageLink, youtubeLink, isButton }) {
+export default function BlockIntro({ wrapBackgr, textIntro, colorText, discription, right, order, imageLink, youtubeLink, isButton, href }) {
     const [isShow, setIsShow] = useState(false);
     return (
         <WrapBlock background={wrapBackgr} right={right} order={order}>
             <Row>
                 <WrapVideo >
                     <div className="modal-video">
-                        <img src={imageLink} alt="" width="100%" />
+                        {href ? <a href={href} target="_blank" rel="noopener noreferrer"><img src={imageLink} alt="" width="100%" /></a>
+                            : <img src={imageLink} alt="" width="100%" />
+                        }
                         {isButton && <button className="btn-video" onClick={() => setIsShow(!isShow)}>
                             <FaYoutube />
                         </button>
@@ -25,7 +27,10 @@ export default function BlockIntro({ wrapBackgr, textIntro, colorText, discripti
 
                     </div>
                     <div className="text-intro">
-                        <TitleIntro colorText={colorText}>{textIntro}</TitleIntro>
+                        {href ?
+                            <a href={href} target="_blank" rel="noopener noreferrer"><TitleIntro colorText={colorText}>{textIntro}</TitleIntro></a>
+                            : <TitleIntro colorText={colorText}>{textIntro}</TitleIntro>
+                        }
                         <Descrip>{discription}</Descrip>
                     </div>
                 </WrapVideo>

@@ -14,13 +14,16 @@ import Footer from './components/Footer'
 import Qa from './pages/Qa';
 import Contact from './pages/Contact'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Coming from "./pages/Coming"
 
 function Wrap() {
     return (
         <WrapSiteContext>
-            <Router>
+
+            <Router >
                 <Header />
                 <Switch>
+                    <Route exact path="/exchange" component={Coming} />
                     <Route exact path="/" component={App} />
                     <Route exact path="/q&a" component={Qa} />
                     <Route exact path="/contact" component={Contact} />

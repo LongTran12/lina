@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Row, Col } from 'antd';
 import Social from "./Social";
-import logo from "../assets/images/logo-lina-1.png";
+import logo from "../assets/images/logo_buster.png";
 import styled from 'styled-components';
 import { SiteContext } from '../contexts/siteContext'
 
@@ -16,7 +16,7 @@ export default function Footer() {
                         <Row>
                             <Col xxl={8} md={24} sm={24} xs={24}>
                                 <div className="logo-left d-flex align-items-center">
-                                    <img src={logo} alt="logo" width="64px" height="92" />
+                                    <img src={logo} alt="logo" height="92px" />
                                     <SpanInline> {getLang('LINA.NETWORK © Copyright 2018.')}</SpanInline>
                                 </div>
                             </Col>
@@ -51,7 +51,7 @@ const BackWrapper = styled.div`
     `;
 const SpanInline = styled.span`
         color:#fff;
-        padding-left:40px;
+        padding-left:10px;
     `;
 
 const UlFooter = styled.ul`
